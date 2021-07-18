@@ -1,0 +1,1129 @@
+{
+	"info": {
+		"_postman_id": "1a5c00f5-4b64-4be3-902a-cdd9e15a4eba",
+		"name": "TPConnects API Release 18.4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "BA",
+			"item": []
+		},
+		{
+			"name": "WY",
+			"item": []
+		},
+		{
+			"name": "Combained",
+			"item": [
+				{
+					"name": "SOAP XML",
+					"item": [
+						{
+							"name": "Offer Management",
+							"item": [
+								{
+									"name": "AirShopping",
+									"protocolProfileBehavior": {
+										"disabledSystemHeaders": {
+											"content-type": true
+										}
+									},
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/xml"
+											},
+											{
+												"key": "api-key",
+												"type": "text",
+												"value": "9ab4fff983ec7bd06efbf0922fa30d73",
+												"disabled": true
+											},
+											{
+												"key": "secret-key",
+												"type": "text",
+												"value": "f772704a-dcd6-4de2-86dd-294915b1cd4e",
+												"disabled": true
+											},
+											{
+												"key": "soapAction",
+												"value": "http://www.iata.org/ndc/AirShopping/",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:head=\"http://tpconnects.com/security/header\">\r\n  <soapenv:Header>\r\n    <head:SecurityHeader>\r\n      <agent>SEP</agent>\r\n      <apiKey>1d4987b44cfb49b2b9e85cc6fd1b2541</apiKey>\r\n      <secretKey>d054d5d3-24dc-4629-9cd4-9808ecb56d7c</secretKey>\r\n    </head:SecurityHeader>\r\n  </soapenv:Header>\r\n  <soapenv:Body>\r\n    <IATA_AirShoppingRQ xmlns=\"http://www.iata.org/IATA/2015/00/2018.2/IATA_AirShoppingRQ\">\r\n      <MessageDoc>\r\n        <Name>NDC</Name>\r\n        <RefVersionNumber>18.2</RefVersionNumber>\r\n      </MessageDoc>\r\n      <Party>\r\n        <Participant>\r\n          <Corporation>\r\n            <CorporateCodeText>no</CorporateCodeText>\r\n          </Corporation>\r\n          <TravelAgency>\r\n            <AgencyID>496</AgencyID>\r\n            <IATANumber></IATANumber>\r\n            <Name>TEST</Name>\r\n            <PseudoCityID/>\r\n            <TravelAgent>\r\n              <TravelAgentID>CMBUL38TP-21-0</TravelAgentID>\r\n            </TravelAgent>\r\n          </TravelAgency>\r\n        </Participant>\r\n        <Sender>\r\n          <TravelAgency>\r\n            <AgencyID>123</AgencyID>\r\n            <IATANumber></IATANumber>\r\n            <Name>Whereto</Name>\r\n            <PseudoCityID>PCC</PseudoCityID>\r\n            <TravelAgent>\r\n              <TravelAgentID>128-21-0</TravelAgentID>\r\n            </TravelAgent>\r\n            <TypeCode>OnlineTravelAgency</TypeCode>\r\n          </TravelAgency>\r\n        </Sender>\r\n      </Party>\r\n      <Request>\r\n        <FlightCriteria>\r\n          <OriginDestCriteria>\r\n            <DestArrivalCriteria>\r\n              <IATALocationCode>DXB</IATALocationCode>\r\n            </DestArrivalCriteria>\r\n            <OriginDepCriteria>\r\n              <Date>2021-08-21</Date>\r\n              <IATALocationCode>LHR</IATALocationCode>\r\n            </OriginDepCriteria>\r\n          </OriginDestCriteria>\r\n        </FlightCriteria>\r\n        <Paxs>\r\n          <Pax>\r\n            <PaxID>PAX1</PaxID>\r\n            <PTC>ADT</PTC>\r\n          </Pax>\r\n        </Paxs>\r\n        <ShoppingCriteria>\r\n          <CabinTypeCriteria>\r\n            <CabinTypeCode>Y</CabinTypeCode>\r\n            <CabinTypeName>Economy</CabinTypeName>\r\n          </CabinTypeCriteria>\r\n        </ShoppingCriteria>\r\n      </Request>\r\n    </IATA_AirShoppingRQ>\r\n  </soapenv:Body>\r\n</soapenv:Envelope>"
+										},
+										"url": {
+											"raw": "http://{{URL}}/soap",
+											"protocol": "http",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"soap"
+											]
+										},
+										"description": "Airshopping_RQ"
+									},
+									"response": []
+								},
+								{
+									"name": "ServiceList",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/xml",
+												"type": "text"
+											},
+											{
+												"key": "api-key",
+												"value": "b68b3dbb5361136fa811be55c3704977",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "secret-key",
+												"value": "bbae366e-743e-4f42-9a56-f9d08c4533d6",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "soapaction",
+												"value": "http://www.iata.org/ndc/ServiceList/",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "<q1:Envelope xmlns:q1=\"http://schemas.xmlsoap.org/soap/envelope/\">\n\t<q1:Header>\n\t\t<SecurityHeader xmlns=\"http://tpconnects.com/security/header\">\n\t\t\t<agent xmlns=\"\">KHI</agent>\n\t\t\t<apiKey xmlns=\"\">c4dd10cc56f3c3449da36a9a125406bf</apiKey>\n\t\t\t<secretKey xmlns=\"\">96739533-9ecb-4bec-a565-d83125fa0c27</secretKey>\n\t\t</SecurityHeader>\n\t</q1:Header>\n\t<q1:Body>\n\t\t<IATA_ServiceListRQ xmlns=\"http://www.iata.org/IATA/2015/00/2018.2/IATA_ServiceListRQ\">\n\t\t\t<MessageDoc>\n\t\t\t\t<Name>NDC</Name>\n\t\t\t\t<RefVersionNumber>18.2</RefVersionNumber>\n\t\t\t</MessageDoc>\n\t\t\t<Party>\n\t\t\t\t<Sender>\n\t\t\t\t\t<TravelAgency>\n\t\t\t\t\t\t<AgencyID>496</AgencyID>\n\t\t\t\t\t\t<IATANumber></IATANumber>\n\t\t\t\t\t\t<Name></Name>\n\t\t\t\t\t\t<PseudoCityID>MCT</PseudoCityID>\n\t\t\t\t\t\t<TravelAgent>\n\t\t\t\t\t\t\t<TravelAgentID>CMBUL38TP-21-0</TravelAgentID>\n\t\t\t\t\t\t</TravelAgent>\n\t\t\t\t\t</TravelAgency>\n\t\t\t\t</Sender>\n\t\t\t</Party>\n\t\t\t<PayloadAttributes>\n\t\t\t\t<EchoTokenText>e55a3a76-f69f-418f-9258-6df53851c9f3</EchoTokenText>\n\t\t\t\t<VersionNumber>18.2</VersionNumber>\n\t\t\t</PayloadAttributes>\n\t\t\t<Request>\n\t\t\t\t<CoreRequest>\n\t\t\t\t\t<Offer>\n\t\t\t\t\t\t<OfferID>WY-OFFER-3</OfferID>\n\t\t\t\t\t\t<OfferItem>\n\t\t\t\t\t\t\t<OfferItemID>WY-OFFERITEM-1</OfferItemID>\n\t\t\t\t\t\t\t<OwnerCode>WY</OwnerCode>\n\t\t\t\t\t\t</OfferItem>\n\t\t\t\t\t\t<OwnerCode>WY</OwnerCode>\n\t\t\t\t\t\t<OwnerTypeCode>ORA</OwnerTypeCode>\n\t\t\t\t\t</Offer>\n\t\t\t\t\t<OriginDest>\n\t\t\t\t\t\t<PaxJourney>\n\t\t\t\t\t\t\t<PaxJourneyID>WY-WY102-WY609-1</PaxJourneyID>\n\t\t\t\t\t\t\t<PaxSegment>\n\t\t\t\t\t\t\t\t<Arrival>\n\t\t\t\t\t\t\t\t\t<AircraftScheduledDateTime>2021-08-22T07:15:00.000</AircraftScheduledDateTime>\n\t\t\t\t\t\t\t\t\t<IATALocationCode>MCT</IATALocationCode>\n\t\t\t\t\t\t\t\t\t<StationName>Seeb Intl</StationName>\n\t\t\t\t\t\t\t\t</Arrival>\n\t\t\t\t\t\t\t\t<CabinType>\n\t\t\t\t\t\t\t\t\t<CabinTypeCode>T</CabinTypeCode>\n\t\t\t\t\t\t\t\t\t<CabinTypeName>ECONOMY SMART</CabinTypeName>\n\t\t\t\t\t\t\t\t</CabinType>\n\t\t\t\t\t\t\t\t<Dep>\n\t\t\t\t\t\t\t\t\t<AircraftScheduledDateTime>2021-08-21T20:50:00.000</AircraftScheduledDateTime>\n\t\t\t\t\t\t\t\t\t<IATALocationCode>LHR</IATALocationCode>\n\t\t\t\t\t\t\t\t\t<StationName>Seeb Intl</StationName>\n\t\t\t\t\t\t\t\t</Dep>\n\t\t\t\t\t\t\t\t<Duration>PT7H25M</Duration>\n\t\t\t\t\t\t\t\t<MarketingCarrierInfo>\n\t\t\t\t\t\t\t\t\t<CarrierDesigCode>WY</CarrierDesigCode>\n\t\t\t\t\t\t\t\t\t<CarrierName>OA</CarrierName>\n\t\t\t\t\t\t\t\t\t<MarketingCarrierFlightNumberText>0102</MarketingCarrierFlightNumberText>\n\t\t\t\t\t\t\t\t\t<RBDCode Name=\"\">L</RBDCode>\n\t\t\t\t\t\t\t\t</MarketingCarrierInfo>\n\t\t\t\t\t\t\t\t<OperatingCarrierInfo>\n\t\t\t\t\t\t\t\t\t<CarrierDesigCode>WY</CarrierDesigCode>\n\t\t\t\t\t\t\t\t\t<CarrierName>OA</CarrierName>\n\t\t\t\t\t\t\t\t</OperatingCarrierInfo>\n\t\t\t\t\t\t\t\t<PaxSegmentID>WY-WY102-WY0102-2021082120-2021082207</PaxSegmentID>\n\t\t\t\t\t\t\t</PaxSegment>\n\t\t\t\t\t\t</PaxJourney>\n\t\t\t\t\t</OriginDest>\n\t\t\t\t</CoreRequest>\n\t\t\t\t<Pax>\n\t\t\t\t\t<Individual>\n\t\t\t\t\t\t<GivenName>FNameA</GivenName>\n\t\t\t\t\t\t<Surname>LName</Surname>\n\t\t\t\t\t</Individual>\n\t\t\t\t\t<PaxID>PAX1</PaxID>\n\t\t\t\t\t<PTC>ADT</PTC>\n\t\t\t\t</Pax>\n\t\t\t\t<ShoppingResponse>\n\t\t\t\t\t<OwnerCode>WY</OwnerCode>\n\t\t\t\t\t<ShoppingResponseID>e55a3a76-f69f-418f-9258-6df53851c9f3</ShoppingResponseID>\n\t\t\t\t</ShoppingResponse>\n\t\t\t</Request>\n\t\t</IATA_ServiceListRQ>\n\t</q1:Body>\n</q1:Envelope>"
+										},
+										"url": {
+											"raw": "http://{{URL}}/soap",
+											"protocol": "http",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"soap"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "OfferPrice",
+									"protocolProfileBehavior": {
+										"disabledSystemHeaders": {
+											"content-type": true
+										}
+									},
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/xml"
+											},
+											{
+												"key": "api-key",
+												"type": "text",
+												"value": "9ab4fff983ec7bd06efbf0922fa30d73",
+												"disabled": true
+											},
+											{
+												"key": "secret-key",
+												"type": "text",
+												"value": "f772704a-dcd6-4de2-86dd-294915b1cd4e",
+												"disabled": true
+											},
+											{
+												"key": "soapaction",
+												"value": "http://www.iata.org/ndc/OfferPrice/",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:head=\"http://tpconnects.com/security/header\">\r\n  <soapenv:Header>\r\n    <head:SecurityHeader>\r\n      <agent>SEP</agent>\r\n      <apiKey>1d4987b44cfb49b2b9e85cc6fd1b2541</apiKey>\r\n      <secretKey>d054d5d3-24dc-4629-9cd4-9808ecb56d7c</secretKey>\r\n    </head:SecurityHeader>\r\n  </soapenv:Header>\r\n  <soapenv:Body>\r\n    <IATA_OfferPriceRQ xmlns=\"http://www.iata.org/IATA/2015/00/2018.2/IATA_OfferPriceRQ\">\r\n      <MessageDoc>\r\n        <Name>NDC</Name>\r\n        <RefVersionNumber>18.2</RefVersionNumber>\r\n      </MessageDoc>\r\n      <Party>\r\n        <Participant>\r\n          <TravelAgency>\r\n            <AgencyID>0</AgencyID>\r\n            <IATANumber>91212391</IATANumber>\r\n            <Name>Srilankan AirlineOffice</Name>\r\n            <PseudoCityID>CMB</PseudoCityID>\r\n            <TravelAgent>\r\n              <TravelAgentID>CMBUL38TP-21-0</TravelAgentID>\r\n            </TravelAgent>\r\n          </TravelAgency>\r\n        </Participant>\r\n        <Sender>\r\n          <TravelAgency>\r\n            <AgencyID>123</AgencyID>\r\n            <IATANumber>91212391</IATANumber>\r\n            <Name>Whereto</Name>\r\n            <PseudoCityID>PCC</PseudoCityID>\r\n            <TravelAgent>\r\n              <TravelAgentID>128-21-0</TravelAgentID>\r\n            </TravelAgent>\r\n            <TypeCode>OnlineTravelAgency</TypeCode>\r\n          </TravelAgency>\r\n        </Sender>\r\n      </Party>\r\n      <PayloadAttributes>\r\n        <EchoTokenText>e55a3a76-f69f-418f-9258-6df53851c9f3</EchoTokenText>\r\n        <VersionNumber>18.2</VersionNumber>\r\n      </PayloadAttributes>\r\n      <Request>\r\n        <OfferPriceParameters>\r\n          <CurParameter>\r\n            <AppCode>Display</AppCode>\r\n            <CurCode>LKR</CurCode>\r\n            <DecimalsAllowedNumber>3</DecimalsAllowedNumber>\r\n          </CurParameter>\r\n          <PricingParameter>\r\n            <SimplePricingInd>true</SimplePricingInd>\r\n          </PricingParameter>\r\n        </OfferPriceParameters>\r\n        <PricedOffer>\r\n          <SelectedOffer>\r\n            <OfferRefID>WY-OFFER-3</OfferRefID>\r\n            <OwnerCode>WY</OwnerCode>\r\n            <SelectedOfferItem>\r\n              <OfferItemRefID>WY-OFFERITEM-1</OfferItemRefID>\r\n              <PaxRefID>PAX1</PaxRefID>\r\n              <SelectedALaCarteOfferItem>\r\n                <FlightAssociations>\r\n                  <PaxJourneyRefID>WY-WY102-WY609-1</PaxJourneyRefID>\r\n                </FlightAssociations>\r\n                <Qty>1</Qty>\r\n              </SelectedALaCarteOfferItem>\r\n            </SelectedOfferItem>\r\n            <ShoppingResponseRefID>e55a3a76-f69f-418f-9258-6df53851c9f3</ShoppingResponseRefID>\r\n            <TotalOfferPriceAmount/>\r\n          </SelectedOffer>\r\n        </PricedOffer>\r\n      </Request>\r\n    </IATA_OfferPriceRQ>\r\n  </soapenv:Body>\r\n</soapenv:Envelope>"
+										},
+										"url": {
+											"raw": "http://{{URL}}/soap",
+											"protocol": "http",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"soap"
+											]
+										},
+										"description": "Airshopping_RQ"
+									},
+									"response": []
+								},
+								{
+									"name": "SeatAvail",
+									"protocolProfileBehavior": {
+										"disabledSystemHeaders": {}
+									},
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "text/xml",
+												"type": "text"
+											},
+											{
+												"key": "api-key",
+												"value": "b68b3dbb5361136fa811be55c3704977",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "secret-key",
+												"value": "bbae366e-743e-4f42-9a56-f9d08c4533d6",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "SOAPAction",
+												"value": "http://www.iata.org/ndc/SeatAvailability/",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "<q1:Envelope xmlns:q1=\"http://schemas.xmlsoap.org/soap/envelope/\">\n\t<q1:Header> \n\t\t<SecurityHeader xmlns=\"http://tpconnects.com/security/header\">\n\t\t\t<agent xmlns=\"\">KHI</agent>\n\t\t\t<apiKey xmlns=\"\">28e8b581b36de3de102bed3fcc804e26</apiKey>\n\t\t\t<secretKey xmlns=\"\">a57a4f37-d765-4571-9168-51d99af603a4</secretKey>\n\t\t</SecurityHeader>\n\t</q1:Header>\n\t<q1:Body>\n\t\t<IATA_SeatAvailRQ xmlns=\"http://www.iata.org/IATA/2015/00/2018.2/IATA_SeatAvailabilityRQ\">\n\t\t\t<Party>\n\t\t\t\t<Sender>\n\t\t\t\t\t<AgencyID>738</AgencyID>\n\t\t\t\t\t\t<IATANumber>62200153</IATANumber>\n\t\t\t\t\t\t<Name>Khimji House of Travel LLC</Name>\n\t\t\t\t\t\t<PseudoCityID>MCT</PseudoCityID>\n\t\t\t\t\t\t<TravelAgent>\n\t\t\t\t\t\t\t<TravelAgentID>122-738</TravelAgentID>\n\t\t\t\t\t\t</TravelAgent>\n\t\t\t\t</Sender>\n\t\t\t</Party>\n\t\t\t<PayloadAttributes>\n\t\t\t\t<EchoTokenText>3240b3be-7881-474d-834a-564383d9bd9e</EchoTokenText>\n\t\t\t\t<VersionNumber>18.2</VersionNumber>\n\t\t\t</PayloadAttributes>\n\t\t\t<Request>\n\t\t\t\t<CoreRequest>\n\t\t\t\t\t<Offer>\n\t\t\t\t\t\t<OfferID>WY-OFFER-11</OfferID>\n\t\t\t\t\t\t<OwnerCode>WY</OwnerCode>\n\t\t\t\t\t</Offer>\n\t\t\t\t\t<PaxSegment>\n\t\t\t\t\t\t<Arrival>\n\t\t\t\t\t\t\t<AircraftScheduledDateTime>2021-10-23T17:25:00</AircraftScheduledDateTime>\n\t\t\t\t\t\t\t<IATALocationCode>MCT</IATALocationCode>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t</Arrival>\n\t\t\t\t\t\t<CabinType>\n\t\t\t\t\t\t\t<CabinTypeCode>Y</CabinTypeCode>\n\t\t\t\t\t\t\t<CabinTypeName>Economy</CabinTypeName>\n\t\t\t\t\t\t</CabinType>\n\t\t\t\t\t\t<DatedOperatingLeg>\n\t\t\t\t\t\t\t<IATAAircraftType>\n\t\t\t\t\t\t\t\t<IATAAircraftTypeCode>788</IATAAircraftTypeCode>\n\t\t\t\t\t\t\t</IATAAircraftType>\n\t\t\t\t\t\t</DatedOperatingLeg>\n\t\t\t\t\t\t<Dep>\n\t\t\t\t\t\t\t<AircraftScheduledDateTime>2021-10-23T16:15:00</AircraftScheduledDateTime>\n\t\t\t\t\t\t\t<IATALocationCode>BOM</IATALocationCode>\n\t\t\t\t\t\t</Dep>\n\t\t\t\t\t\t<Duration>PT2H40M</Duration>\n\t\t\t\t\t\t<MarketingCarrierInfo>\n\t\t\t\t\t\t\t<CarrierDesigCode>WY</CarrierDesigCode>\n\t\t\t\t\t\t\t<CarrierName>OmanAir</CarrierName>\n\t\t\t\t\t\t\t<MarketingCarrierFlightNumberText>204</MarketingCarrierFlightNumberText>\n\t\t\t\t\t\t\t<RBDCode Name=\"\">L</RBDCode>\n\t\t\t\t\t\t</MarketingCarrierInfo>\n\t\t\t\t\t\t<OperatingCarrierInfo>\n\t\t\t\t\t\t\t<CarrierDesigCode>WY</CarrierDesigCode>\n\t\t\t\t\t\t\t<CarrierName>OA</CarrierName>\n\t\t\t\t\t\t\t<OperatingCarrierFlightNumberText>204</OperatingCarrierFlightNumberText>\n\t\t\t\t\t\t</OperatingCarrierInfo>\n\t\t\t\t\t\t<PaxSegmentID>WY-WY204-WY204-2021102316-2021102317-O</PaxSegmentID>\n\t\t\t\t\t</PaxSegment>\n\t\t\t\t</CoreRequest>\n\t\t\t\t<ShoppingResponse>\n\t\t\t\t\t<OwnerCode>WY</OwnerCode>\n\t\t\t\t\t<ShoppingResponseID>3240b3be-7881-474d-834a-564383d9bd9e</ShoppingResponseID>\n\t\t\t\t</ShoppingResponse>\n\t\t\t</Request>\n\t\t</IATA_SeatAvailRQ>\n\t</q1:Body>\n</q1:Envelope>"
+										},
+										"url": {
+											"raw": "http://{{URL}}/soap",
+											"protocol": "http",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"soap"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ServiceList",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/xml",
+												"type": "text"
+											},
+											{
+												"key": "api-key",
+												"value": "b68b3dbb5361136fa811be55c3704977",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "secret-key",
+												"value": "bbae366e-743e-4f42-9a56-f9d08c4533d6",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "soapaction",
+												"value": "http://www.iata.org/ndc/ServiceList/",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "<q1:Envelope xmlns:q1=\"http://schemas.xmlsoap.org/soap/envelope/\">\n\t<q1:Header>\n\t\t<SecurityHeader xmlns=\"http://tpconnects.com/security/header\">\n\t\t\t<agent xmlns=\"\">KHI</agent>\n\t\t\t<apiKey xmlns=\"\">1d4987b44cfb49b2b9e85cc6fd1b2541</apiKey>\n\t\t\t<secretKey xmlns=\"\">d054d5d3-24dc-4629-9cd4-9808ecb56d7c</secretKey>\n\t\t</SecurityHeader>\n\t</q1:Header>\n\t<q1:Body>\n\t\t<IATA_ServiceListRQ xmlns=\"http://www.iata.org/IATA/2015/00/2018.2/IATA_ServiceListRQ\">\n\t\t\t<MessageDoc>\n\t\t\t\t<Name>NDC</Name>\n\t\t\t\t<RefVersionNumber>18.2</RefVersionNumber>\n\t\t\t</MessageDoc>\n\t\t\t<Party>\n\t\t\t\t<Sender>\n\t\t\t\t\t<TravelAgency>\n\t\t\t\t\t\t<AgencyID>496</AgencyID>\n\t\t\t\t\t\t<IATANumber></IATANumber>\n\t\t\t\t\t\t<Name></Name>\n\t\t\t\t\t\t<PseudoCityID>MCT</PseudoCityID>\n\t\t\t\t\t\t<TravelAgent>\n\t\t\t\t\t\t\t<TravelAgentID>CMBUL38TP-21-0</TravelAgentID>\n\t\t\t\t\t\t</TravelAgent>\n\t\t\t\t\t</TravelAgency>\n\t\t\t\t</Sender>\n\t\t\t</Party>\n\t\t\t<PayloadAttributes>\n\t\t\t\t<EchoTokenText>e55a3a76-f69f-418f-9258-6df53851c9f3</EchoTokenText>\n\t\t\t\t<VersionNumber>18.2</VersionNumber>\n\t\t\t</PayloadAttributes>\n\t\t\t<Request>\n\t\t\t\t<CoreRequest>\n\t\t\t\t\t<Offer>\n\t\t\t\t\t\t<OfferID>WY-OFFER-3</OfferID>\n\t\t\t\t\t\t<OfferItem>\n\t\t\t\t\t\t\t<OfferItemID>WY-OFFERITEM-1</OfferItemID>\n\t\t\t\t\t\t\t<OwnerCode>WY</OwnerCode>\n\t\t\t\t\t\t</OfferItem>\n\t\t\t\t\t\t<OwnerCode>WY</OwnerCode>\n\t\t\t\t\t\t<OwnerTypeCode>ORA</OwnerTypeCode>\n\t\t\t\t\t</Offer>\n\t\t\t\t\t<OriginDest>\n\t\t\t\t\t\t<PaxJourney>\n\t\t\t\t\t\t\t<PaxJourneyID>WY-WY102-WY609-1</PaxJourneyID>\n\t\t\t\t\t\t\t<PaxSegment>\n\t\t\t\t\t\t\t\t<Arrival>\n\t\t\t\t\t\t\t\t\t<AircraftScheduledDateTime>2021-08-22T07:15:00.000</AircraftScheduledDateTime>\n\t\t\t\t\t\t\t\t\t<IATALocationCode>MCT</IATALocationCode>\n\t\t\t\t\t\t\t\t\t<StationName>Seeb Intl</StationName>\n\t\t\t\t\t\t\t\t</Arrival>\n\t\t\t\t\t\t\t\t<CabinType>\n\t\t\t\t\t\t\t\t\t<CabinTypeCode>T</CabinTypeCode>\n\t\t\t\t\t\t\t\t\t<CabinTypeName>ECONOMY SMART</CabinTypeName>\n\t\t\t\t\t\t\t\t</CabinType>\n\t\t\t\t\t\t\t\t<Dep>\n\t\t\t\t\t\t\t\t\t<AircraftScheduledDateTime>2021-08-21T20:50:00.000</AircraftScheduledDateTime>\n\t\t\t\t\t\t\t\t\t<IATALocationCode>LHR</IATALocationCode>\n\t\t\t\t\t\t\t\t\t<StationName>Seeb Intl</StationName>\n\t\t\t\t\t\t\t\t</Dep>\n\t\t\t\t\t\t\t\t<Duration>PT7H25M</Duration>\n\t\t\t\t\t\t\t\t<MarketingCarrierInfo>\n\t\t\t\t\t\t\t\t\t<CarrierDesigCode>WY</CarrierDesigCode>\n\t\t\t\t\t\t\t\t\t<CarrierName>OA</CarrierName>\n\t\t\t\t\t\t\t\t\t<MarketingCarrierFlightNumberText>0102</MarketingCarrierFlightNumberText>\n\t\t\t\t\t\t\t\t\t<RBDCode Name=\"\">L</RBDCode>\n\t\t\t\t\t\t\t\t</MarketingCarrierInfo>\n\t\t\t\t\t\t\t\t<OperatingCarrierInfo>\n\t\t\t\t\t\t\t\t\t<CarrierDesigCode>WY</CarrierDesigCode>\n\t\t\t\t\t\t\t\t\t<CarrierName>OA</CarrierName>\n\t\t\t\t\t\t\t\t</OperatingCarrierInfo>\n\t\t\t\t\t\t\t\t<PaxSegmentID>WY-WY102-WY0102-2021082120-2021082207</PaxSegmentID>\n\t\t\t\t\t\t\t</PaxSegment>\n\t\t\t\t\t\t</PaxJourney>\n\t\t\t\t\t</OriginDest>\n\t\t\t\t</CoreRequest>\n\t\t\t\t<Pax>\n\t\t\t\t\t<Individual>\n\t\t\t\t\t\t<GivenName>FNameA</GivenName>\n\t\t\t\t\t\t<Surname>LName</Surname>\n\t\t\t\t\t</Individual>\n\t\t\t\t\t<PaxID>PAX1</PaxID>\n\t\t\t\t\t<PTC>ADT</PTC>\n\t\t\t\t</Pax>\n\t\t\t\t<ShoppingResponse>\n\t\t\t\t\t<OwnerCode>WY</OwnerCode>\n\t\t\t\t\t<ShoppingResponseID>e55a3a76-f69f-418f-9258-6df53851c9f3</ShoppingResponseID>\n\t\t\t\t</ShoppingResponse>\n\t\t\t</Request>\n\t\t</IATA_ServiceListRQ>\n\t</q1:Body>\n</q1:Envelope>"
+										},
+										"url": {
+											"raw": "http://{{URL}}/soap",
+											"protocol": "http",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"soap"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Order Management",
+							"item": [
+								{
+									"name": "SeatAvail",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "text/xml",
+												"type": "text"
+											},
+											{
+												"key": "api-key",
+												"value": "b68b3dbb5361136fa811be55c3704977",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "secret-key",
+												"value": "bbae366e-743e-4f42-9a56-f9d08c4533d6",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "soapaction",
+												"value": "http://www.iata.org/ndc/SeatAvailability/",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\"><soapenv:Header><head:SecurityHeader xmlns:head=\"http://tpconnects.com/security/header\">\n<agent>null</agent>      <apiKey>1d4987b44cfb49b2b9e85cc6fd1b2541</apiKey>\n      <secretKey>d054d5d3-24dc-4629-9cd4-9808ecb56d7c</secretKey></head:SecurityHeader></soapenv:Header><soapenv:Body>\n<iata:IATA_SeatAvailRQ xsi:schemaLocation=\"\" xmlns:iata=\"http://www.iata.org/IATA/2015/00/2018.2/IATA_SeatAvailabilityRQ\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n    <iata:MessageDoc>\n        <iata:Name>NDC</iata:Name>\n        <iata:RefVersionNumber>18.2</iata:RefVersionNumber>\n    </iata:MessageDoc>\n    <iata:Party>\n        <iata:Sender>\n            <iata:TravelAgency>\n                <iata:AgencyID>496</iata:AgencyID>\n                <iata:IATANumber></iata:IATANumber>\n                <iata:Name></iata:Name>\n                <iata:PseudoCityID></iata:PseudoCityID>\n                <iata:TravelAgent>\n                    <iata:TravelAgentID>CMBUL38TP-21-0</iata:TravelAgentID>\n                </iata:TravelAgent>\n                <iata:TypeCode>OnlineTravelAgency</iata:TypeCode>\n            </iata:TravelAgency>\n        </iata:Sender>\n    </iata:Party>\n    <iata:PayloadAttributes>\n        <iata:EchoTokenText>e55a3a76-f69f-418f-9258-6df53851c9f3</iata:EchoTokenText>\n        <iata:VersionNumber>18.2</iata:VersionNumber>\n    </iata:PayloadAttributes>\n    <iata:PointOfSale>\n        <iata:Device>\n            <iata:DeviceCode>182.75.77.58</iata:DeviceCode>\n        </iata:Device>\n    </iata:PointOfSale>\n    <iata:Request>\n        <iata:CoreRequest>\n            <iata:Offer>\n                <iata:OfferID>WY-OFFER-3</iata:OfferID>\n                <iata:OwnerCode>WY</iata:OwnerCode>\n            </iata:Offer>\n            <iata:PaxSegment>\n                <iata:Arrival>\n                    <iata:AircraftScheduledDateTime>2021-08-22T07:15:00.000</iata:AircraftScheduledDateTime>\n                    <iata:IATALocationCode>MCT</iata:IATALocationCode>\n                </iata:Arrival>\n                <iata:CabinType>\n                    <iata:CabinTypeCode>T</iata:CabinTypeCode>\n                    <iata:CabinTypeName>ECONOMY SMART</iata:CabinTypeName>\n                </iata:CabinType>\n                <iata:DatedOperatingLeg>\n                    <iata:IATAAircraftType>\n                        <iata:IATAAircraftTypeCode>789</iata:IATAAircraftTypeCode>\n                    </iata:IATAAircraftType>\n                </iata:DatedOperatingLeg>\n                <iata:Dep>\n                    <iata:AircraftScheduledDateTime>2021-08-21T20:50:00.000</iata:AircraftScheduledDateTime>\n                    <iata:IATALocationCode>LHR</iata:IATALocationCode>\n                </iata:Dep>\n                <iata:Duration>PT7H25M</iata:Duration>\n                <iata:MarketingCarrierInfo>\n                    <iata:CarrierDesigCode>WY</iata:CarrierDesigCode>\n                    <iata:MarketingCarrierFlightNumberText>0102</iata:MarketingCarrierFlightNumberText>\n                    <iata:RBDCode>T</iata:RBDCode>\n                </iata:MarketingCarrierInfo>\n                <iata:OperatingCarrierInfo>\n                    <iata:CarrierDesigCode>WY</iata:CarrierDesigCode>\n                    <iata:CarrierName></iata:CarrierName>\n                    <iata:OperatingCarrierFlightNumberText>0102</iata:OperatingCarrierFlightNumberText>\n                </iata:OperatingCarrierInfo>\n                <iata:PaxSegmentID>WY-WY102-WY0102-2021082120-2021082207</iata:PaxSegmentID>\n            </iata:PaxSegment>\n        </iata:CoreRequest>\n        <iata:ShoppingResponse>\n            <iata:OwnerCode>BA</iata:OwnerCode>\n            <iata:ShoppingResponseID>e55a3a76-f69f-418f-9258-6df53851c9f3</iata:ShoppingResponseID>\n        </iata:ShoppingResponse>\n    </iata:Request>\n</iata:IATA_SeatAvailRQ>\n</soapenv:Body></soapenv:Envelope>"
+										},
+										"url": {
+											"raw": "https://{{URL}}/soap",
+											"protocol": "https",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"soap"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "OrderRules",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/xml",
+												"type": "text"
+											},
+											{
+												"key": "api-key",
+												"value": "b68b3dbb5361136fa811be55c3704977",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "secret-key",
+												"value": "bbae366e-743e-4f42-9a56-f9d08c4533d6",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "soapaction",
+												"value": "http://www.iata.org/ndc/OrderRules/",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:head=\"http://tpconnects.com/security/header\" xmlns:iata=\"http://www.iata.org/IATA/2015/00/2018.2/IATA_OrderRulesRQ\">\n\t<soapenv:Header>\n\t\t<head:SecurityHeader>\n\t\t\t<agent>SKY</agent>\n\t\t\t<apiKey>a3e25b8de450074821fc97429b27acfc</apiKey>\n\t\t\t<secretKey>4f07d49d-03cc-4fd5-92e9-2af8424290eb</secretKey>\n\t\t</head:SecurityHeader>\n\t</soapenv:Header>\n\t<soapenv:Body>\n\t\t<iata:IATA_OrderRulesRQ>\n\t\t\t<iata:MessageDoc>\n\t\t\t\t<iata:Name>NDC</iata:Name>\n\t\t\t\t<iata:RefVersionNumber>18.2</iata:RefVersionNumber>\n\t\t\t</iata:MessageDoc>\n\t\t\t<iata:Party>\n\t\t\t\t<iata:Sender>\n\t\t\t\t\t<iata:TravelAgency>\n\t\t\t\t\t\t<iata:AgencyID>13413</iata:AgencyID>\n\t\t\t\t\t\t<iata:IATANumber>1341313413</iata:IATANumber>\n\t\t\t\t\t\t<iata:Name>Skywings Tours and Travels LLC</iata:Name>\n\t\t\t\t\t\t<iata:PseudoCityID/>\n\t\t\t\t\t\t<iata:TravelAgent>\n\t\t\t\t\t\t\t<iata:TravelAgentID>MCTND</iata:TravelAgentID>\n\t\t\t\t\t\t</iata:TravelAgent>\n\t\t\t\t\t</iata:TravelAgency>\n\t\t\t\t</iata:Sender>\n\t\t\t</iata:Party>\n\t\t\t<iata:PayloadAttributes>\n\t\t\t\t<iata:EchoTokenText>ddba39e2-7237-4d00-9acf-7eee48d37f85</iata:EchoTokenText>\n\t\t\t\t<iata:VersionNumber>18.2</iata:VersionNumber>\n\t\t\t</iata:PayloadAttributes>\n\t\t\t<iata:Request>\n\t\t\t\t<iata:CoreRequest>\n\t\t\t\t\t<iata:FareRef>\n\t\t\t\t\t\t<iata:AirlineDesigCode>WY</iata:AirlineDesigCode>\n\t\t\t\t\t\t<iata:Arrival>\n\t\t\t\t\t\t\t<iata:AircraftScheduledDateTime>2021-10-22T15:40</iata:AircraftScheduledDateTime>\n\t\t\t\t\t\t\t<iata:IATALocationCode>DXB</iata:IATALocationCode>\n\t\t\t\t\t\t\t<iata:StationName/>\n\t\t\t\t\t\t</iata:Arrival>\n\t\t\t\t\t\t<iata:Dep>\n\t\t\t\t\t\t\t<iata:AircraftScheduledDateTime>2021-10-22T10:05</iata:AircraftScheduledDateTime>\n\t\t\t\t\t\t\t<iata:IATALocationCode>DEL</iata:IATALocationCode>\n\t\t\t\t\t\t\t<iata:StationName/>\n\t\t\t\t\t\t\t<iata:TerminalName/>\n\t\t\t\t\t\t</iata:Dep>\n\t\t\t\t\t\t<iata:FareBasisCode>LELOIA</iata:FareBasisCode>\n\t\t\t\t\t</iata:FareRef>\n\t\t\t\t\t<iata:OrderRef>\n\t\t\t\t\t\t<iata:OwnerCode>WY</iata:OwnerCode>\n\t\t\t\t\t\t<iata:OwnerTypeCode>ORA</iata:OwnerTypeCode>\n\t\t\t\t\t</iata:OrderRef>\n\t\t\t\t</iata:CoreRequest>\n\t\t\t</iata:Request>\n\t\t</iata:IATA_OrderRulesRQ>\n\t</soapenv:Body>\n</soapenv:Envelope>\n"
+										},
+										"url": {
+											"raw": "http://{{URL}}/soap",
+											"protocol": "http",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"soap"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "OrderReshop",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/xml",
+												"type": "text"
+											},
+											{
+												"key": "api-key",
+												"value": "b68b3dbb5361136fa811be55c3704977",
+												"type": "text"
+											},
+											{
+												"key": "secret-key",
+												"value": "bbae366e-743e-4f42-9a56-f9d08c4533d6",
+												"type": "text"
+											},
+											{
+												"key": "soapaction",
+												"value": "http://www.iata.org/ndc/OrderReshop/",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:head=\"http://tpconnects.com/security/header\">\n  <soapenv:Header>\n    <head:SecurityHeader>\n      <agent>SEP</agent>\n      <apiKey>578455fd20d45c5a77ffacd63877025b</apiKey>\n      <secretKey>44060ac0-bbbb-4770-8c80-42c6a1ac2b52</secretKey>\n    </head:SecurityHeader>\n  </soapenv:Header>\n  <soapenv:Body>\n    <IATA_OrderReshopRQ xmlns=\"http://www.iata.org/IATA/2015/00/2018.2/IATA_OrderReshopRQ\">\n      <MessageDoc>\n        <Name>NDC</Name>\n        <RefVersionNumber>18.2</RefVersionNumber>\n      </MessageDoc>\n      <Party>\n        <Sender>\n          <TravelAgency>\n            <AgencyID>123</AgencyID>\n            <IATANumber>27900202</IATANumber>\n            <Name>Whereto</Name>\n            <PseudoCityID>PCC</PseudoCityID>\n            <TravelAgent>\n              <TravelAgentID>128-21-0</TravelAgentID>\n            </TravelAgent>\n            <TypeCode>OnlineTravelAgency</TypeCode>\n          </TravelAgency>\n        </Sender>\n      </Party>\n      <PayloadAttributes>\n        <VersionNumber>18.2</VersionNumber>\n      </PayloadAttributes>\n      <Request>\n        <BookingRef>\n          <BookingEntity/>\n          <BookingID>TPC12310114D2762021S</BookingID>\n          <BookingRefTypeCode>TPC</BookingRefTypeCode>\n        </BookingRef>\n        <OrderActionContextText>Reprice-single</OrderActionContextText>\n        <OrderRefID>T4NVA8</OrderRefID>\n        <ReshopParameters>\n          <CurParameter>\n            <AppCode>Display</AppCode>\n            <Name>SGD</Name>\n            <RequestedCurCode>SGD</RequestedCurCode>\n          </CurParameter>\n          <PricingParameter>\n            <AutoExchInd>true</AutoExchInd>\n          </PricingParameter>\n        </ReshopParameters>\n        <UpdateOrder>\n          <RepriceOrder>\n            <OrderItemRefID>SV-OFFERITEM-ADT</OrderItemRefID>\n          </RepriceOrder>\n          <ReshopOrder>\n            <ServiceOrder>\n              <AddOfferItems>\n                <Paxs>\n                  <Pax>\n                    <PaxID>PAX1</PaxID>\n                    <PTC>ADT</PTC>\n                  </Pax>\n                </Paxs>\n              </AddOfferItems>\n            </ServiceOrder>\n          </ReshopOrder>\n        </UpdateOrder>\n      </Request>\n    </IATA_OrderReshopRQ>\n  </soapenv:Body>\n</soapenv:Envelope>"
+										},
+										"url": {
+											"raw": "http://{{URL}}/soap",
+											"protocol": "http",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"soap"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "OrderRetrieve",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/xml"
+											},
+											{
+												"key": "api-key",
+												"value": "b68b3dbb5361136fa811be55c3704977",
+												"disabled": true
+											},
+											{
+												"key": "secret-key",
+												"value": "bbae366e-743e-4f42-9a56-f9d08c4533d6",
+												"disabled": true
+											},
+											{
+												"key": "soapaction",
+												"value": "http://www.iata.org/ndc/OrderRetrieve/",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:head=\"http://tpconnects.com/security/header\">\n    <soapenv:Header>\n        <head:SecurityHeader>\n            <agent>AACTM</agent>\n            <apiKey>b68b3dbb5361136fa811be55c3704977</apiKey>\n            <secretKey>bbae366e-743e-4f42-9a56-f9d08c4533d7</secretKey>\n        </head:SecurityHeader>\n    </soapenv:Header>\n    <soapenv:Body>\n        <ns2:IATA_OrderRetrieveRQ xmlns:ns2=\"http://www.iata.org/IATA/2015/00/2018.2/IATA_OrderRetrieveRQ\">\n            <ns2:MessageDoc>\n                <ns2:Name>NDC</ns2:Name>\n                <ns2:RefVersionNumber>18.2</ns2:RefVersionNumber>\n            </ns2:MessageDoc>\n            <ns2:PointOfSale>\n                <ns2:Device>\n                    <ns2:DeviceCode>94.200.55.38</ns2:DeviceCode>\n                </ns2:Device>\n                <ns2:RequestTime>2021-01-27T18:20:38</ns2:RequestTime>\n            </ns2:PointOfSale>\n            <ns2:Party>\n                <ns2:Sender>\n                    <ns2:TravelAgency>\n                        <ns2:AgencyID>0</ns2:AgencyID>\n                        <ns2:TypeCode>OnlineTravelAgency</ns2:TypeCode>\n                        <ns2:IATANumber>91254553</ns2:IATANumber>\n                        <ns2:Name>ATI UK</ns2:Name>\n                        <ns2:PseudoCityID>PCC</ns2:PseudoCityID>\n                        <ns2:TravelAgent>\n                            <ns2:TravelAgentID>128-21-0</ns2:TravelAgentID>\n                        </ns2:TravelAgent>\n                    </ns2:TravelAgency>\n                </ns2:Sender>\n            </ns2:Party>\n            <ns2:PayloadAttributes>\n                <ns2:VersionNumber>18.2</ns2:VersionNumber>\n                <ns2:EchoTokenText>a75f88b7-85a3-58f5-81ab-d11a80a46822</ns2:EchoTokenText>\n            </ns2:PayloadAttributes>\n            <ns2:Request>\n                <ns2:OrderFilterCriteria>\n                    <ns2:Order>\n                        <ns2:OrderID>RTJ6ON</ns2:OrderID>\n                        <ns2:OwnerCode>BA</ns2:OwnerCode>\n                    </ns2:Order>\n                </ns2:OrderFilterCriteria>\n            </ns2:Request>\n        </ns2:IATA_OrderRetrieveRQ>\n    </soapenv:Body>\n</soapenv:Envelope>"
+										},
+										"url": {
+											"raw": "http://{{URL}}/soap",
+											"protocol": "http",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"soap"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "OrderChange",
+									"protocolProfileBehavior": {
+										"disabledSystemHeaders": {}
+									},
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "text/xml",
+												"type": "text"
+											},
+											{
+												"key": "api-key",
+												"value": "b68b3dbb5361136fa811be55c3704977",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "secret-key",
+												"value": "bbae366e-743e-4f42-9a56-f9d08c4533d6",
+												"type": "text",
+												"disabled": true
+											},
+											{
+												"key": "SOAPAction",
+												"value": "http://www.iata.org/ndc/OrderChange/",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:head=\"http://tpconnects.com/security/header\">\n  <soapenv:Header>\n    <head:SecurityHeader>\n      <agent>SEP</agent>\n      <apiKey>1d4987b44cfb49b2b9e85cc6fd1b2541</apiKey>\n      <secretKey>d054d5d3-24dc-4629-9cd4-9808ecb56d7c</secretKey>\n    </head:SecurityHeader>\n  </soapenv:Header>\n  <soapenv:Body>\n    <IATA_OrderChangeRQ xmlns=\"http://www.iata.org/IATA/2015/00/2018.2/IATA_OrderChangeRQ\">\n      <MessageDoc>\n        <Name>NDC</Name>\n        <RefVersionNumber>18.2</RefVersionNumber>\n      </MessageDoc>\n      <Party>\n        <Participant>\n          <Corporation>\n            <CorporateCodeText>no</CorporateCodeText>\n          </Corporation>\n          <TravelAgency>\n            <AgencyID>496</AgencyID>\n            <IATANumber>91212391</IATANumber>\n            <Name>TEST</Name>\n            <PseudoCityID/>\n            <TravelAgent>\n              <TravelAgentID>CMBUL38TP-21-0</TravelAgentID>\n            </TravelAgent>\n          </TravelAgency>\n        </Participant>\n        <Sender>\n          <TravelAgency>\n            <AgencyID>123</AgencyID>\n            <IATANumber>91212391</IATANumber>\n            <Name>Whereto</Name>\n            <PseudoCityID>PCC</PseudoCityID>\n            <TravelAgent>\n              <TravelAgentID>128-21-0</TravelAgentID>\n            </TravelAgent>\n            <TypeCode>OnlineTravelAgency</TypeCode>\n          </TravelAgency>\n        </Sender>\n      </Party>\n      <PayloadAttributes>\n        <EchoTokenText>e55a3a76-f69f-418f-9258-6df53851c9f3</EchoTokenText>\n        <VersionNumber>18.2</VersionNumber>\n      </PayloadAttributes>\n      <PointOfSale>\n        <Device>\n          <IPAddressText>1</IPAddressText>\n        </Device>\n      </PointOfSale>\n      <Request>\n        <BookingRef>\n          <BookingEntity/>\n          <BookingID>WY12453D21715S</BookingID>\n          <BookingRefTypeCode>WY</BookingRefTypeCode>\n        </BookingRef>\n        <DataLists>\n          <ContactInfoList>\n            <ContactInfo>\n              <ContactInfoID>CNCT-1</ContactInfoID>\n              <ContactTypeText>Primary</ContactTypeText>\n              <EmailAddress>\n                <EmailAddressText>irshadali460@gmail.com</EmailAddressText>\n                <LabelText>Personal</LabelText>\n              </EmailAddress>\n              <OtherAddress>\n                <LabelText>Lang</LabelText>\n                <OtherAddressText>EN</OtherAddressText>\n              </OtherAddress>\n              <Phone>\n                <CountryDialingCode>244</CountryDialingCode>\n                <LabelText>Mobile</LabelText>\n                <PhoneNumber>8756235856</PhoneNumber>\n              </Phone>\n            </ContactInfo>\n          </ContactInfoList>\n          <PaxList>\n            <Pax>\n              <Birthdate>2001-11-16</Birthdate>\n              <CitizenshipCountryCode>AL</CitizenshipCountryCode>\n              <ContactInfoRefID>CNCT-1</ContactInfoRefID>\n              <IdentityDoc>\n                <ExpiryDate>2037-11-12</ExpiryDate>\n                <IdentityDocID>IND785551</IdentityDocID>\n                <IdentityDocTypeCode>PT</IdentityDocTypeCode>\n                <IssueDate>2018-11-08</IssueDate>\n                <IssuingCountryCode>AL</IssuingCountryCode>\n                <ResidenceCountryCode>AL</ResidenceCountryCode>\n              </IdentityDoc>\n              <Individual>\n                <GenderCode>M</GenderCode>\n                <GivenName>AkhilADTa</GivenName>\n                <IndividualID>1</IndividualID>\n                <Surname>Muhammed</Surname>\n                <TitleName>Mr</TitleName>\n              </Individual>\n              <PaxID>PAX1</PaxID>\n              <PTC>ADT</PTC>\n              <ResidenceCountryCode>AL</ResidenceCountryCode>\n            </Pax>\n          </PaxList>\n        </DataLists>\n        <Order>\n          <OrderID>SACIYT</OrderID>\n          <OwnerCode>WY</OwnerCode>\n          <OwnerTypeCode>ORA</OwnerTypeCode>\n        </Order>\n        <OrderChangeParameters>\n          <ReasonCode>Issue</ReasonCode>\n        </OrderChangeParameters>\n        <PaymentInfo>\n          <Amount CurCode=\"LKR\">141418</Amount>\n          <Desc>\n            <DescText>FOP text</DescText>\n          </Desc>\n          <PaymentInfoID>PAYMENT</PaymentInfoID>\n          <PaymentMethod>\n            <OtherPaymentMethod>\n              <Remark>\n                <RemarkText>Deposit</RemarkText>\n              </Remark>\n            </OtherPaymentMethod>\n          </PaymentMethod>\n          <TypeCode>INV</TypeCode>\n        </PaymentInfo>\n      </Request>\n    </IATA_OrderChangeRQ>\n  </soapenv:Body>\n</soapenv:Envelope>"
+										},
+										"url": {
+											"raw": "https://{{URL}}/soap",
+											"protocol": "https",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"soap"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "OrderCreate",
+									"protocolProfileBehavior": {
+										"disabledSystemHeaders": {
+											"content-type": true
+										}
+									},
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"type": "text",
+												"value": "application/xml"
+											},
+											{
+												"key": "api-key",
+												"type": "text",
+												"value": "9ab4fff983ec7bd06efbf0922fa30d73",
+												"disabled": true
+											},
+											{
+												"key": "secret-key",
+												"type": "text",
+												"value": "f772704a-dcd6-4de2-86dd-294915b1cd4e",
+												"disabled": true
+											},
+											{
+												"key": "soapaction",
+												"value": "http://www.iata.org/ndc/OrderCreate/",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:head=\"http://tpconnects.com/security/header\">\r\n  <soapenv:Header>\r\n    <head:SecurityHeader>\r\n      <agent>SEP</agent>\r\n      <apiKey>1d4987b44cfb49b2b9e85cc6fd1b2541</apiKey>\r\n      <secretKey>d054d5d3-24dc-4629-9cd4-9808ecb56d7c</secretKey>\r\n    </head:SecurityHeader>\r\n  </soapenv:Header>\r\n  <soapenv:Body>\r\n    <IATA_OrderCreateRQ xmlns=\"http://www.iata.org/IATA/2015/00/2018.2/IATA_OrderCreateRQ\">\r\n      <MessageDoc>\r\n        <Name>NDC</Name>\r\n        <RefVersionNumber>18.2</RefVersionNumber>\r\n      </MessageDoc>\r\n      <Party>\r\n        <Participant>\r\n          <Corporation>\r\n            <CorporateCodeText>no</CorporateCodeText>\r\n          </Corporation>\r\n          <TravelAgency>\r\n            <AgencyID>496</AgencyID>\r\n            <IATANumber>91212391</IATANumber>\r\n            <Name>TEST</Name>\r\n            <PseudoCityID/>\r\n            <TravelAgent>\r\n              <TravelAgentID>CMBUL38TP-21-0</TravelAgentID>\r\n            </TravelAgent>\r\n          </TravelAgency>\r\n        </Participant>\r\n        <Sender>\r\n          <TravelAgency>\r\n            <AgencyID>123</AgencyID>\r\n            <IATANumber>91212391</IATANumber>\r\n            <Name>Whereto</Name>\r\n            <PseudoCityID>PCC</PseudoCityID>\r\n            <TravelAgent>\r\n              <TravelAgentID>128-21-0</TravelAgentID>\r\n            </TravelAgent>\r\n            <TypeCode>OnlineTravelAgency</TypeCode>\r\n          </TravelAgency>\r\n        </Sender>\r\n      </Party>\r\n      <PayloadAttributes>\r\n        <EchoTokenText>e55a3a76-f69f-418f-9258-6df53851c9f3</EchoTokenText>\r\n        <VersionNumber>18.2</VersionNumber>\r\n      </PayloadAttributes>\r\n      <PointOfSale>\r\n        <Device>\r\n          <IPAddressText>1</IPAddressText>\r\n        </Device>\r\n      </PointOfSale>\r\n      <Request>\r\n        <CreateOrder>\r\n          <SelectedOffer>\r\n            <OfferRefID>WY-OFFER-3</OfferRefID>\r\n            <OwnerCode>WY</OwnerCode>\r\n            <SelectedOfferItem>\r\n              <OfferItemRefID>WY-OFFERITEM-1</OfferItemRefID>\r\n              <PaxRefID>PAX1</PaxRefID>\r\n              <SelectedBundleServices>\r\n                <SelectedServiceRefID>WY-SERVICE-1</SelectedServiceRefID>\r\n              </SelectedBundleServices>\r\n            </SelectedOfferItem>\r\n            <ShoppingResponseRefID>e55a3a76-f69f-418f-9258-6df53851c9f3</ShoppingResponseRefID>\r\n            <TotalOfferPriceAmount CurCode=\"LKR\">141418</TotalOfferPriceAmount>\r\n          </SelectedOffer>\r\n        </CreateOrder>\r\n        <DataLists>\r\n          <ContactInfoList>\r\n            <ContactInfo>\r\n              <ContactInfoID>CNCT-1</ContactInfoID>\r\n              <ContactTypeText>Primary</ContactTypeText>\r\n              <EmailAddress>\r\n                <EmailAddressText>irshadali460@gmail.com</EmailAddressText>\r\n                <LabelText>Personal</LabelText>\r\n              </EmailAddress>\r\n              <OtherAddress>\r\n                <LabelText>Lang</LabelText>\r\n                <OtherAddressText>EN</OtherAddressText>\r\n              </OtherAddress>\r\n              <Phone>\r\n                <CountryDialingCode>244</CountryDialingCode>\r\n                <LabelText>Mobile</LabelText>\r\n                <PhoneNumber>8756235856</PhoneNumber>\r\n              </Phone>\r\n            </ContactInfo>\r\n          </ContactInfoList>\r\n          <PaxList>\r\n            <Pax>\r\n              <Birthdate>2001-11-16</Birthdate>\r\n              <CitizenshipCountryCode>AL</CitizenshipCountryCode>\r\n              <ContactInfoRefID>CNCT-1</ContactInfoRefID>\r\n              <IdentityDoc>\r\n                <ExpiryDate>2037-11-12</ExpiryDate>\r\n                <IdentityDocID>IND785551</IdentityDocID>\r\n                <IdentityDocTypeCode>PT</IdentityDocTypeCode>\r\n                <IssueDate>2018-11-08</IssueDate>\r\n                <IssuingCountryCode>AL</IssuingCountryCode>\r\n                <ResidenceCountryCode>AL</ResidenceCountryCode>\r\n              </IdentityDoc>\r\n              <Individual>\r\n                <GenderCode>M</GenderCode>\r\n                <GivenName>AkhilADTa</GivenName>\r\n                <IndividualID>1</IndividualID>\r\n                <Surname>Muhammed</Surname>\r\n                <TitleName>Mr</TitleName>\r\n              </Individual>\r\n              <PaxID>PAX1</PaxID>\r\n              <PTC>ADT</PTC>\r\n              <ResidenceCountryCode>AL</ResidenceCountryCode>\r\n            </Pax>\r\n          </PaxList>\r\n        </DataLists>\r\n        <PaymentInfo>\r\n          <Amount CurCode=\"LKR\">141418</Amount>\r\n        </PaymentInfo>\r\n      </Request>\r\n    </IATA_OrderCreateRQ>\r\n  </soapenv:Body>\r\n</soapenv:Envelope>"
+										},
+										"url": {
+											"raw": "http://{{URL}}/soap",
+											"protocol": "http",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"soap"
+											]
+										},
+										"description": "Airshopping_RQ"
+									},
+									"response": []
+								},
+								{
+									"name": "OrderCancel",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/xml",
+												"type": "text"
+											},
+											{
+												"key": "api-key",
+												"value": "b68b3dbb5361136fa811be55c3704977",
+												"type": "text"
+											},
+											{
+												"key": "secret-key",
+												"value": "bbae366e-743e-4f42-9a56-f9d08c4533d6",
+												"type": "text"
+											},
+											{
+												"key": "soapaction",
+												"value": "http://www.iata.org/ndc/OrderCancel/",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:head=\"http://tpconnects.com/security/header\">\n  <soapenv:Header>\n    <head:SecurityHeader>\n      <agent>SEP</agent>\n      <apiKey>bd3c877a6286dd02a164e10662499b85</apiKey>\n      <secretKey>414608ad-3559-46e9-8c88-73c9028bb46b</secretKey>\n    </head:SecurityHeader>\n  </soapenv:Header>\n  <soapenv:Body>\n    <IATA_OrderCancelRQ xmlns=\"http://www.iata.org/IATA/2015/00/2018.2/IATA_OrderCancelRQ\">\n      <MessageDoc>\n        <Name>NDC</Name>\n        <RefVersionNumber>18.2</RefVersionNumber>\n      </MessageDoc>\n      <Party>\n        <Participant>\n          <TravelAgency>\n            <AgencyID>0</AgencyID>\n            <IATANumber>32334750</IATANumber>\n            <Name>Srilankan AirlineOffice</Name>\n            <PseudoCityID>CMB</PseudoCityID>\n            <TravelAgent>\n              <TravelAgentID>CMBUL38TP-21-0</TravelAgentID>\n            </TravelAgent>\n          </TravelAgency>\n        </Participant>\n        <Sender>\n          <TravelAgency>\n            <AgencyID>123</AgencyID>\n            <IATANumber>32334750</IATANumber>\n            <Name>Whereto</Name>\n            <PseudoCityID>PCC</PseudoCityID>\n            <TravelAgent>\n              <TravelAgentID>128-21-0</TravelAgentID>\n            </TravelAgent>\n            <TypeCode>OnlineTravelAgency</TypeCode>\n          </TravelAgency>\n        </Sender>\n      </Party>\n      <PayloadAttributes>\n        <EchoTokenText>a9e9b021-6532-479d-af3e-1a07c36ce96a</EchoTokenText>\n        <VersionNumber>18.2</VersionNumber>\n      </PayloadAttributes>\n      <PointOfSale>\n        <Device>\n          <IPAddressText>1</IPAddressText>\n        </Device>\n      </PointOfSale>\n      <Request>\n        <BookingRef>\n          <BookingEntity>\n            <Carrier>\n              <AirlineDesigCode>SQ</AirlineDesigCode>\n            </Carrier>\n          </BookingEntity>\n          <BookingID>SQ5241D21314S</BookingID>\n          <BookingRefTypeCode>TPC</BookingRefTypeCode>\n        </BookingRef>\n        <Order>\n          <OrderID>6AWN7P</OrderID>\n          <OwnerCode>SQ</OwnerCode>\n          <OwnerTypeCode>ORA</OwnerTypeCode>\n        </Order>\n        <OrderCancelProcessing>\n          <ReasonCode>VOID</ReasonCode>\n        </OrderCancelProcessing>\n      </Request>\n    </IATA_OrderCancelRQ>\n  </soapenv:Body>\n</soapenv:Envelope"
+										},
+										"url": {
+											"raw": "http://{{URL}}/soap",
+											"protocol": "http",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"soap"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "REST JSON",
+					"item": [
+						{
+							"name": "Offer Management",
+							"item": [
+								{
+									"name": "ServiceList",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "api-key",
+												"value": "{{api-key}}"
+											},
+											{
+												"key": "secret-key",
+												"value": "{{secret-key}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"IATA_ServiceListRQ\": {\n\t\t\"MessageDoc\": {\n\t\t\t\"Name\": \"NDC\",\n\t\t\t\"RefVersionNumber\": 18.2\n\t\t},\n\t\t\"Party\": {\n\t\t\t\"Sender\": {\n\t\t\t\t\"EnabledSystem\": {\n\t\t\t\t\t\"SystemID\": \"B2B\"\n\t\t\t\t},\n\t\t\t\t\"Aggregator\": {\n\t\t\t\t\t\"AggregatorID\": \"AGG\"\n\t\t\t\t},\n\t\t\t\t\"TravelAgency\": {\n\t\t\t\t\t\"AgencyID\": 13354,\n\t\t\t\t\t\"IATANumber\": \"\",\n\t\t\t\t\t\"Name\": \"Umaimath\",\n\t\t\t\t\t\"PseudoCityID\": \"LONFB38C9\",\n\t\t\t\t\t\"TravelAgent\": {\n\t\t\t\t\t\t\"TravelAgentID\": \"133540-\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t},\n\t\t\"PayloadAttributes\": {\n\t\t\t\"EchoTokenText\": \"3ffd3a5c-fffa-48f5-9685-e4a040fa859c\",\n\t\t\t\"VersionNumber\": 18.2\n\t\t},\n\t\t\"PointOfSale\": {\n\t\t\t\"Device\": {\n\t\t\t\t\"DeviceCode\": \"94.200.55.74\"\n\t\t\t},\n\t\t\t\"Country\": {\n\t\t\t\t\"CountryName\": \"United Arab Emirates\"\n\t\t\t}\n\t\t},\n\t\t\"Request\": {\n\t\t\t\"CoreRequest\": {\n\t\t\t\t\"Offer\": {\n                    \"OfferRefID\": \"OF-31e24962-3eb1-4c7c-a75e-79c0a70a6ddd\",\n\t\t\t\t\t\"OfferItem\": [\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"OfferItemID\": \"OF-31e24962-3eb1-4c7c-a75e-79c0a70a6ddd-OI-1\",\n\t\t\t\t\t\t\t\"OwnerCode\": \"BA\"\n\t\t\t\t\t\t}\n\t\t\t\t\t],\n\t\t\t\t\t\"OrderID\": \"WED3F3\",\n\t\t\t\t\t\"OwnerCode\": \"BA\"\n\t\t\t\t},\n\t\t\t\t\"OriginDest\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"DestStationCode\": null,\n\t\t\t\t\t\t\"OriginStationCode\": null,\n\t\t\t\t\t\t\"PaxJourney\": {\n\t\t\t\t\t\t\t\"PaxSegment\": [\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\"Arrival\": {\n\t\t\t\t\t\t\t\t\t\t\"AircraftScheduledDateTime\": \"2021-08-17T05:55:00.000\",\n\t\t\t\t\t\t\t\t\t\t\"IATALocationCode\": \"LHR\",\n\t\t\t\t\t\t\t\t\t\t\"StationName\": \"John F Kennedy (NY) (New York) Airport\",\n\t\t\t\t\t\t\t\t\t\t\"TerminalName\": \"7\"\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\"Dep\": {\n\t\t\t\t\t\t\t\t\t\t\"AircraftScheduledDateTime\": \"2021-08-17T01:15:00.000\",\n\t\t\t\t\t\t\t\t\t\t\"IATALocationCode\": \"DXB\",\n\t\t\t\t\t\t\t\t\t\t\"StationName\": \"Heathrow (London) Airport\",\n\t\t\t\t\t\t\t\t\t\t\"TerminalName\": \"5\"\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\"Duration\": \"PT7H40M\",\n\t\t\t\t\t\t\t\t\t\"MarketingCarrierInfo\": {\n\t\t\t\t\t\t\t\t\t\t\"CarrierDesigCode\": \"BA\",\n\t\t\t\t\t\t\t\t\t\t\"CarrierName\": \"British Airways\",\n\t\t\t\t\t\t\t\t\t\t\"MarketingCarrierFlightNumberText\": \"0106\",\n\t\t\t\t\t\t\t\t\t\t\"RBDCode\": {\n\t\t\t\t\t\t\t\t\t\t\t\"value\": \"S\",\n                                    \"Name\": \"World Traveller\"\n\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\"OperatingCarrierInfo\": {\n\t\t\t\t\t\t\t\t\t\t\"CarrierDesigCode\": \"BA\",\n\t\t\t\t\t\t\t\t\t\t\"CarrierName\": \"British Airways\",\n\t\t\t\t\t\t\t\t\t\t\"OperatingCarrierFlightNumberText\": \"0106\"\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\"PaxSegmentID\": \"PAX1\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t]\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t},\n\t\t\t\"ShoppingResponse\": [\n\t\t\t\t{\n\t\t\t\t\t\"OwnerCode\": \"BA\",\n\t\t\t\t\t\"ShoppingResponseID\": \"3ffd3a5c-fffa-48f5-9685-e4a040fa859c\"\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t}\n}"
+										},
+										"url": {
+											"raw": "http://{{URL}}/{{Service}}/serviceList",
+											"protocol": "http",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"{{Service}}",
+												"serviceList"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "SeatAvail",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "api-key",
+												"value": "{{api-key}}",
+												"type": "text"
+											},
+											{
+												"key": "secret-key",
+												"value": "{{secret-key}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"IATA_SeatAvailRQ\": { \n\t\t\"MessageDoc\": {\n\t\t\t\"Name\": \"NDC\",\n\t\t\t\"RefVersionNumber\": 18.2\n\t\t},\n\t\t\"Party\": {\n\t\t\t\"Sender\": {\n\t\t\t\t\"EnabledSystem\": {\n\t\t\t\t\t\"SystemID\": \"B2B\"\n\t\t\t\t},\n\t\t\t\t\"Aggregator\": {\n\t\t\t\t\t\"AggregatorID\": \"AGG\"\n\t\t\t\t},\n\t\t\t\t\"TravelAgency\": {\n\t\t\t\t\t\"AgencyID\": 13354,\n\t\t\t\t\t\"IATANumber\": \"\",\n\t\t\t\t\t\"Name\": \"Umaimath\",\n\t\t\t\t\t\"PseudoCityID\": \"LONFB38C9\",\n\t\t\t\t\t\"TravelAgent\": {\n\t\t\t\t\t\t\"TravelAgentID\": \"133540-1756\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t},\n\t\t\"PayloadAttributes\": {\n\t\t\t\"EchoTokenText\": \"3ffd3a5c-fffa-48f5-9685-e4a040fa859c\",\n\t\t\t\"VersionNumber\": 18.2\n\t\t},\n\t\t\"PointOfSale\": {\n\t\t\t\"Device\": {\n\t\t\t\t\"DeviceCode\": \"94.200.55.74\"\n\t\t\t},\n\t\t\t\"Country\": {\n\t\t\t\t\"CountryName\": \"United Arab Emirates\"\n\t\t\t}\n\t\t},\n\t\t\"Request\": {\n\t\t\t\"CoreRequest\": {\n\t\t\t\t\"Offer\": {\n\t\t\t\t\t\n\t\t\t\t\t\"OfferID\": \"WED3F3\",\n\t\t\t\t\t\"OwnerCode\": \"BA\"\n\t\t\t\t\t\n\t\t\t\t},\n\t\t\t\t\"PaxSegment\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"Arrival\": {\n\t\t\t\t\t\t\t\"AircraftScheduledDateTime\": \"2021-08-17T05:55:00.000\",\n\t\t\t\t\t\t\t\"IATALocationCode\": \"LHR\",\n\t\t\t\t\t\t\t\"StationName\": \"Heathrow (London) Airport\",\n\t\t\t\t\t\t\t\"TerminalName\": \"5\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"Dep\": {\n\t\t\t\t\t\t\t\"AircraftScheduledDateTime\": \"2021-08-17T01:15:00.000\",\n\t\t\t\t\t\t\t\"IATALocationCode\": \"DXB\",\n\t\t\t\t\t\t\t\"StationName\": \"Changi (Singapore) Airport\",\n\t\t\t\t\t\t\t\"TerminalName\": \"1\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"Duration\": \"PT7H40M\",\n\t\t\t\t\t\t\"MarketingCarrierInfo\": {\n\t\t\t\t\t\t\t\"CarrierDesigCode\": \"BA\",\n\t\t\t\t\t\t\t\"CarrierName\": \"British Airways\",\n\t\t\t\t\t\t\t\"MarketingCarrierFlightNumberText\": \"0106\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"OperatingCarrierInfo\": {\n\t\t\t\t\t\t\t\"CarrierDesigCode\": \"BA\",\n\t\t\t\t\t\t\t\"CarrierName\": \"British Airways\",\n\t\t\t\t\t\t\t\"OperatingCarrierFlightNumberText\": \"0106\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"PaxSegmentID\": \"FS1\"\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t},\n\t\t\t\"ShoppingResponse\": [\n\t\t\t\t{\n\t\t\t\t\t\"OwnerCode\": \"BA\",\n\t\t\t\t\t\"ShoppingResponseID\": \"3ffd3a5c-fffa-48f5-9685-e4a040fa859c\"\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t}\n}"
+										},
+										"url": {
+											"raw": "http://{{URL}}/{{Service}}/seatAvail",
+											"protocol": "http",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"{{Service}}",
+												"seatAvail"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "AirShopping",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "api-key",
+												"value": "{{api-key}}",
+												"type": "text"
+											},
+											{
+												"key": "secret-key",
+												"value": "{{secret-key}}",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"IATA_AirShoppingRQ\": {\r\n\t\t\"MessageDoc\": {\r\n\t\t\t\"Name\": \"NDC\",\r\n\t\t\t\"RefVersionNumber\": 18.2\r\n\t\t},\r\n\t\t\"Party\": {\r\n\t\t\t\"Participant\": {\r\n\t\t\t\t\"TravelAgency\": {\r\n\t\t\t\t\t\"AgencyID\": 13354,\r\n\t\t\t\t\t\"IATANumber\": \"\",\r\n\t\t\t\t\t\"Name\": \"Umaimath\",\r\n\t\t\t\t\t\"PseudoCityID\": \"LONFB38C9\",\r\n\t\t\t\t\t\"TravelAgent\": {\r\n\t\t\t\t\t\t\"TravelAgentID\": \"133540-1628\"\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"Sender\": {\r\n\t\t\t\t\"TravelAgency\": {\r\n\t\t\t\t\t\"AgencyID\": 13354,\r\n\t\t\t\t\t\"IATANumber\": \"\",\r\n\t\t\t\t\t\"Name\": \"Umaimath\",\r\n\t\t\t\t\t\"PseudoCityID\": \"LONFB38C9\",\r\n\t\t\t\t\t\"TravelAgent\": {\r\n\t\t\t\t\t\t\"TravelAgentID\": \"133540-1628\"\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t},\r\n\t\t\"PointOfSale\": {\r\n\t\t\t\"Device\": {\r\n\t\t\t\t\"DeviceCode\": \"94.200.55.74\"\r\n\t\t\t},\r\n\t\t\t\"Country\": {\r\n\t\t\t\t\"CountryName\": \"United Arab Emirates\"\r\n\t\t\t}\r\n\t\t},\r\n\t\t\"Request\": {\r\n\t\t\t\"FlightCriteria\": {\r\n\t\t\t\t\"OriginDestCriteria\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"DestArrivalCriteria\": {\r\n\t\t\t\t\t\t\t\"IATALocationCode\": \"LHR\",\r\n\t\t\t\t\t\t\t\"StationName\": \"A\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\"OriginDepCriteria\": {\r\n\t\t\t\t\t\t\t\"Date\": \"2021-08-17\",\r\n\t\t\t\t\t\t\t\"IATALocationCode\": \"DXB\",\r\n\t\t\t\t\t\t\t\"StationName\": \"A\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t}\r\n\t\t\t\t]\r\n\t\t\t},\r\n\t\t\t\"Paxs\": {\r\n\t\t\t\t\"Pax\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"PaxID\": \"PAX1\",\r\n\t\t\t\t\t\t\"PTC\": \"ADT\"\r\n\t\t\t\t\t}\r\n\t\t\t\t]\r\n\t\t\t},\r\n\t\t\t\"ResponseParameters\": {\r\n\t\t\t\t\"PricingParameter\": {\r\n\t\t\t\t\t\"OverrideCurCode\": \"GBP\"\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"ShoppingCriteria\": {\r\n\t\t\t\t\"CabinTypeCriteria\": [\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"CabinTypeCode\": \"Y\",\r\n\t\t\t\t\t\t\"CabinTypeName\": \"Economy\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"CabinTypeCode\": \"W\",\r\n\t\t\t\t\t\t\"CabinTypeName\": \"Premium Economy\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"CabinTypeCode\": \"C\",\r\n\t\t\t\t\t\t\"CabinTypeName\": \"Business Class\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\t\"CabinTypeCode\": \"F\",\r\n\t\t\t\t\t\t\"CabinTypeName\": \"First Class\"\r\n\t\t\t\t\t}\r\n\t\t\t\t]\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://{{URL}}/{{Service}}/airShop",
+											"protocol": "http",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"{{Service}}",
+												"airShop"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "OfferPrice",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "api-key",
+												"value": "{{api-key}}",
+												"type": "text"
+											},
+											{
+												"key": "secret-key",
+												"value": "{{secret-key}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"IATA_OfferPriceRQ\": {\n\t\t\"MessageDoc\": {\n\t\t\t\"Name\": \"NDC\",\n\t\t\t\"RefVersionNumber\": 18.2\n\t\t},\n\t\t\"Party\": {\n\t\t\t\"Participant\": [\n\t\t\t\t{\n\t\t\t\t\t\"TravelAgency\": [\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"AgencyID\": 13354,\n\t\t\t\t\t\t\t\"IATANumber\": \"\",\n\t\t\t\t\t\t\t\"Name\": \"Umaimath\",\n\t\t\t\t\t\t\t\"PseudoCityID\": \"LONFB38C9\",\n\t\t\t\t\t\t\t\"TravelAgent\": {\n\t\t\t\t\t\t\t\t\"TravelAgentID\": \"133540-1628\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t]\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"Sender\": {\n\t\t\t\t\"TravelAgency\": {\n\t\t\t\t\t\"AgencyID\": 13354,\n\t\t\t\t\t\"IATANumber\": \"\",\n\t\t\t\t\t\"Name\": \"Umaimath\",\n\t\t\t\t\t\"PseudoCityID\": \"LONFB38C9\",\n\t\t\t\t\t\"TravelAgent\": {\n\t\t\t\t\t\t\"TravelAgentID\": \"133540-1628\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t},\n\t\t\"PayloadAttributes\": {\n\t\t\t\"EchoTokenText\": \"3ffd3a5c-fffa-48f5-9685-e4a040fa859c\",\n\t\t\t\"VersionNumber\": 18.2\n\t\t},\n\t\t\"PointOfSale\": {},\n\t\t\"Request\": {\n\t\t\t\"OfferPriceParameters\": {\n\t\t\t\t\"CurParameter\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"AppCode\": \"Display\",\n\t\t\t\t\t\t\"CurCode\": \"GBP\"\n\t\t\t\t\t}\n\t\t\t\t],\n\t\t\t\t\"PricingParameter\": {\n\t\t\t\t\t\"SimplePricingInd\": true\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"PricedOffer\": {\n\t\t\t\t\"SelectedOffer\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"OfferRefID\": \"OF-31e24962-3eb1-4c7c-a75e-79c0a70a6ddd\",\n\t\t\t\t\t\t\"OwnerCode\": \"BA\",\n\t\t\t\t\t\t\"SelectedOfferItem\": [\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"OfferItemRefID\": \"OF-31e24962-3eb1-4c7c-a75e-79c0a70a6ddd-OI-1\",\n\t\t\t\t\t\t\t\t\"PaxRefID\": [\n\t\t\t\t\t\t\t\t\t\"PAX1\"\n\t\t\t\t\t\t\t\t],\n\t\t\t\t\t\t\t\t\"SelectedALaCarteOfferItem\": {\n\t\t\t\t\t\t\t\t\t\"FlightAssociations\": {\n\t\t\t\t\t\t\t\t\t\t\"PaxJourneyRefID\": \"Flight1_BA0106\"\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\"Qty\": {\n\t\t\t\t\t\t\t\t\t\t\"value\": 1\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t],\n\t\t\t\t\t\t\"ShoppingResponseRefID\": \"3ffd3a5c-fffa-48f5-9685-e4a040fa859c\",\n\t\t\t\t\t\t\"TotalOfferPriceAmount\": {\n\t\t\t\t\t\t\t\"value\": 228.10\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t}\n\t\t}\n\t}\n}"
+										},
+										"url": {
+											"raw": "http://{{URL}}/{{Service}}/offerPrice",
+											"protocol": "http",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"{{Service}}",
+												"offerPrice"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Order Management",
+							"item": [
+								{
+									"name": "OrderReshop",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "api-key",
+												"value": "{{api-key}}"
+											},
+											{
+												"key": "secret-key",
+												"value": "{{secret-key}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"IATA_OrderReshopRQ\": {\n        \"MessageDoc\": {\n            \"Name\": \"NDC\",\n            \"RefVersionNumber\": 18.2\n        },\n        \"Party\": {\n            \"Participant\": {\n\t\t\t\t\"TravelAgency\": {\n\t\t\t\t\t\"AgencyID\": \"Flight Centre\",\n\t\t\t\t\t\"IATANumber\": \"91212391\",\n\t\t\t\t\t\"Name\": \"azeem512\",\n\t\t\t\t\t\"PseudoCityID\": \"\",\n\t\t\t\t\t\"TravelAgent\": {\n\t\t\t\t\t\t\"TravelAgentID\": 1526\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n        },\n        \"PayloadAttributes\": {\n            \"EchoTokenText\": \"3780c37a-165c-45b4-8b82-813224f41da0\",\n            \"VersionNumber\": 18.2\n        },\n        \"Request\": {\n            \"BookingRef\": [\n                {\n                    \"BookingEntity\": {},\n                    \"BookingID\": \"BA14284D2122\",\n                    \"BookingRefTypeCode\": \"TPC\"\n                }\n            ],\n            \"OrderActionContextText\": \"Reshop\",\n            \"OrderRefID\": \"STDY63\",\n            \"ReshopParameters\": {\n                \"CurParameter\": [\n                    {\n                        \"AppCode\": \"Display\",\n                        \"Name\": \"OMR\",\n                        \"RequestedCurCode\": \"OMR\"\n                    }\n                ],\n                \"PricingParameter\": {\n                    \"AutoExchInd\": true\n                }\n            },\n            \"UpdateOrder\": {\n                \"ReshopOrder\": {\n                    \"ServiceOrder\": {\n                        \"AddOfferItems\": {\n                            \"FlightCriteria\": {\n                                \"OriginDestCriteria\": [\n                                    {\n                                        \"DestArrivalCriteria\": {\n                                            \"IATALocationCode\": \"DXB\"\n                                        },\n                                        \"OriginDepCriteria\": {\n                                            \"Date\": \"2021-07-01\",\n\t\t\t\t\t\t\t\t\t\t\t\"IATALocationCode\": \"LHR\"\n                                        },\n                                        \"OriginDestID\": \"DXBLHR\",\n                                        \"PreferredCabinType\": [\n                                            {\n                                                \"CabinTypeCode\": \"all\"\n                                            }\n                                        ]\n                                    }, {\n                                        \"DestArrivalCriteria\": {\n                                            \"IATALocationCode\": \"LHR\"\n                                        },\n                                        \"OriginDepCriteria\": {\n                                            \"Date\": \"2021-07-07\",\n\t\t\t\t\t\t\t\t\t\t\t\"IATALocationCode\": \"DXB\"\n                                        },\n                                        \"OriginDestID\": \"LHRDXB\",\n                                        \"PreferredCabinType\": [\n                                            {\n                                                \"CabinTypeCode\": \"all\"\n                                            }\n                                        ]\n                                    }\n                                ]\n                            },\n                            \"Paxs\": {\n                                \"Pax\": [\n                                    {\n                                        \"PaxID\": \"PAX1\",\n                                        \"PTC\": \"ADT\"\n                                    },\n                                     {\n                                        \"PaxID\": \"PAX2\",\n                                        \"PTC\": \"INF\"\n                                    }\n                                ]\n                            },\n                            \"ShoppingCriteria\": {\n                                \"CabinTypeCriteria\": [\n                                    {\n                                        \"CabinTypeCode\": \"Y\"\n                                    }\n                                ]\n                            }\n                        },\n                        \"DeleteOrderItem\": [\n                            {\n                                \"OrderItemRefID\": \"WY-WY602-WY0602-2021032706-2021032707\"\n                            }\n                        ]\n                    }\n                }\n            }\n        }\n    }\n}"
+										},
+										"url": {
+											"raw": "http://{{URL}}/{{Service}}/orderReshop",
+											"protocol": "http",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"{{Service}}",
+												"orderReshop"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "ServiceList",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "api-key",
+												"value": "{{api-key}}"
+											},
+											{
+												"key": "secret-key",
+												"value": "{{secret-key}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"IATA_ServiceListRQ\": {\n\t\t\"MessageDoc\": {\n\t\t\t\"Name\": \"NDC\",\n\t\t\t\"RefVersionNumber\": 18.2\n\t\t},\n\t\t\"Party\": {\n\t\t\t\"Sender\": {\n\t\t\t\t\"EnabledSystem\": {\n\t\t\t\t\t\"SystemID\": \"B2B\"\n\t\t\t\t},\n\t\t\t\t\"Aggregator\": {\n\t\t\t\t\t\"AggregatorID\": \"AGG\"\n\t\t\t\t},\n\t\t\t\t\"TravelAgency\": {\n\t\t\t\t\t\"AgencyID\": 13354,\n\t\t\t\t\t\"IATANumber\": \"\",\n\t\t\t\t\t\"Name\": \"Umaimath\",\n\t\t\t\t\t\"PseudoCityID\": \"LONFB38C9\",\n\t\t\t\t\t\"TravelAgent\": {\n\t\t\t\t\t\t\"TravelAgentID\": \"133540-\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t},\n\t\t\"PayloadAttributes\": {\n\t\t\t\"EchoTokenText\": \"3ffd3a5c-fffa-48f5-9685-e4a040fa859c\",\n\t\t\t\"VersionNumber\": 18.2\n\t\t},\n\t\t\"PointOfSale\": {\n\t\t\t\"Device\": {\n\t\t\t\t\"DeviceCode\": \"94.200.55.74\"\n\t\t\t},\n\t\t\t\"Country\": {\n\t\t\t\t\"CountryName\": \"United Arab Emirates\"\n\t\t\t}\n\t\t},\n\t\t\"Request\": {\n\t\t\t\"CoreRequest\": {\n\t\t\t\t\"Order\": {\n\t\t\t\t\t\"BookingRef\": [\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"BookingID\": \"TPC133431687D1772021\",\n\t\t\t\t\t\t\t\"BookingRefTypeCode\": \"TPC\"\n\t\t\t\t\t\t}\n\t\t\t\t\t],\n\t\t\t\t\t\"OrderID\": \"WED3F3\",\n\t\t\t\t\t\"OwnerCode\": \"BA\"\n\t\t\t\t},\n\t\t\t\t\"OriginDest\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"DestStationCode\": null,\n\t\t\t\t\t\t\"OriginStationCode\": null,\n\t\t\t\t\t\t\"PaxJourney\": {\n\t\t\t\t\t\t\t\"PaxSegment\": [\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\"Arrival\": {\n\t\t\t\t\t\t\t\t\t\t\"AircraftScheduledDateTime\": \"2021-08-17T05:55:00.000\",\n\t\t\t\t\t\t\t\t\t\t\"IATALocationCode\": \"LHR\",\n\t\t\t\t\t\t\t\t\t\t\"StationName\": \"John F Kennedy (NY) (New York) Airport\",\n\t\t\t\t\t\t\t\t\t\t\"TerminalName\": \"7\"\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\"Dep\": {\n\t\t\t\t\t\t\t\t\t\t\"AircraftScheduledDateTime\": \"2021-08-17T01:15:00.000\",\n\t\t\t\t\t\t\t\t\t\t\"IATALocationCode\": \"DXB\",\n\t\t\t\t\t\t\t\t\t\t\"StationName\": \"Heathrow (London) Airport\",\n\t\t\t\t\t\t\t\t\t\t\"TerminalName\": \"5\"\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\"Duration\": \"PT7H40M\",\n\t\t\t\t\t\t\t\t\t\"MarketingCarrierInfo\": {\n\t\t\t\t\t\t\t\t\t\t\"CarrierDesigCode\": \"BA\",\n\t\t\t\t\t\t\t\t\t\t\"CarrierName\": \"British Airways\",\n\t\t\t\t\t\t\t\t\t\t\"MarketingCarrierFlightNumberText\": \"0106\",\n\t\t\t\t\t\t\t\t\t\t\"RBDCode\": {\n\t\t\t\t\t\t\t\t\t\t\t\"value\": \"S\",\n                                    \"Name\": \"World Traveller\"\n\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\"OperatingCarrierInfo\": {\n\t\t\t\t\t\t\t\t\t\t\"CarrierDesigCode\": \"BA\",\n\t\t\t\t\t\t\t\t\t\t\"CarrierName\": \"British Airways\",\n\t\t\t\t\t\t\t\t\t\t\"OperatingCarrierFlightNumberText\": \"0106\"\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\"PaxSegmentID\": \"PAX1\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t]\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t},\n\t\t\t\"Pax\": [\n\t\t\t\t{\n\t\t\t\t\t\"PaxID\": \"T3\",\n\t\t\t\t\t\"PTC\": \"ADT\"\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t}\n}"
+										},
+										"url": {
+											"raw": "http://{{URL}}/{{Service}}/serviceList",
+											"protocol": "http",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"{{Service}}",
+												"serviceList"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "SeatAvail",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "api-key",
+												"value": "{{api-key}}",
+												"type": "text"
+											},
+											{
+												"key": "secret-key",
+												"value": "{{secret-key}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"IATA_SeatAvailRQ\": { \n\t\t\"MessageDoc\": {\n\t\t\t\"Name\": \"NDC\",\n\t\t\t\"RefVersionNumber\": 18.2\n\t\t},\n\t\t\"Party\": {\n\t\t\t\"Sender\": {\n\t\t\t\t\"EnabledSystem\": {\n\t\t\t\t\t\"SystemID\": \"B2B\"\n\t\t\t\t},\n\t\t\t\t\"Aggregator\": {\n\t\t\t\t\t\"AggregatorID\": \"AGG\"\n\t\t\t\t},\n\t\t\t\t\"TravelAgency\": {\n\t\t\t\t\t\"AgencyID\": 13354,\n\t\t\t\t\t\"IATANumber\": \"\",\n\t\t\t\t\t\"Name\": \"Umaimath\",\n\t\t\t\t\t\"PseudoCityID\": \"LONFB38C9\",\n\t\t\t\t\t\"TravelAgent\": {\n\t\t\t\t\t\t\"TravelAgentID\": \"133540-1756\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t},\n\t\t\"PayloadAttributes\": {\n\t\t\t\"EchoTokenText\": \"3ffd3a5c-fffa-48f5-9685-e4a040fa859c\",\n\t\t\t\"VersionNumber\": 18.2\n\t\t},\n\t\t\"PointOfSale\": {\n\t\t\t\"Device\": {\n\t\t\t\t\"DeviceCode\": \"94.200.55.74\"\n\t\t\t},\n\t\t\t\"Country\": {\n\t\t\t\t\"CountryName\": \"United Arab Emirates\"\n\t\t\t}\n\t\t},\n\t\t\"Request\": {\n\t\t\t\"CoreRequest\": {\n\t\t\t\t\"Order\": {\n\t\t\t\t\t\"BookingRef\": [\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"BookingID\": \"TPC133431687D1772021\",\n\t\t\t\t\t\t\t\"BookingRefTypeCode\": \"TPC\"\n\t\t\t\t\t\t}\n\t\t\t\t\t],\n\t\t\t\t\t\"OrderID\": \"WED3F3\",\n\t\t\t\t\t\"OwnerCode\": \"BA\",\n\t\t\t\t\t\"PaxSegmentRefID\": [\n\t\t\t\t\t\t\"FS1\"\n\t\t\t\t\t]\n\t\t\t\t},\n\t\t\t\t\"PaxSegment\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"Arrival\": {\n\t\t\t\t\t\t\t\"AircraftScheduledDateTime\": \"2021-08-17T05:55:00.000\",\n\t\t\t\t\t\t\t\"IATALocationCode\": \"LHR\",\n\t\t\t\t\t\t\t\"StationName\": \"Heathrow (London) Airport\",\n\t\t\t\t\t\t\t\"TerminalName\": \"5\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"Dep\": {\n\t\t\t\t\t\t\t\"AircraftScheduledDateTime\": \"2021-08-17T01:15:00.000\",\n\t\t\t\t\t\t\t\"IATALocationCode\": \"DXB\",\n\t\t\t\t\t\t\t\"StationName\": \"Changi (Singapore) Airport\",\n\t\t\t\t\t\t\t\"TerminalName\": \"1\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"Duration\": \"PT7H40M\",\n\t\t\t\t\t\t\"MarketingCarrierInfo\": {\n\t\t\t\t\t\t\t\"CarrierDesigCode\": \"BA\",\n\t\t\t\t\t\t\t\"CarrierName\": \"British Airways\",\n\t\t\t\t\t\t\t\"MarketingCarrierFlightNumberText\": \"0106\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"OperatingCarrierInfo\": {\n\t\t\t\t\t\t\t\"CarrierDesigCode\": \"BA\",\n\t\t\t\t\t\t\t\"CarrierName\": \"British Airways\",\n\t\t\t\t\t\t\t\"OperatingCarrierFlightNumberText\": \"0106\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"PaxSegmentID\": \"FS1\"\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t},\n\t\t\t\"Pax\": [\n\t\t\t\t{\n\t\t\t\t\t\"PaxID\": \"PAX1\",\n\t\t\t\t\t\"PTC\": \"ADT\"\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t}\n}"
+										},
+										"url": {
+											"raw": "http://{{URL}}/{{Service}}/seatAvail",
+											"protocol": "http",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"{{Service}}",
+												"seatAvail"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "OrderChange",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "api-key",
+												"value": "{{api-key}}",
+												"type": "text"
+											},
+											{
+												"key": "secret-key",
+												"value": "{{secret-key}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"IATA_OrderChangeRQ\": {\n\t\t\"MessageDoc\": {\n\t\t\t\"Name\": \"NDC\",\n\t\t\t\"RefVersionNumber\": 18.2\n\t\t},\n\t\t\"Party\": {\n\t\t\t\"Sender\": {\n\t\t\t\t\"EnabledSystem\": {\n\t\t\t\t\t\"SystemID\": \"B2B\"\n\t\t\t\t},\n\t\t\t\t\"TravelAgency\": {\n\t\t\t\t\t\"AgencyID\": 13343,\n\t\t\t\t\t\t\t\"IATANumber\": \"\",\n\t\t\t\t\t\t\t\"Name\": \"Test BA\",\n\t\t\t\t\t\t\t\"PseudoCityID\": \"\",\n\t\t\t\t\t\t\t\"TravelAgent\": {\n\t\t\t\t\t\t\t\t\"TravelAgentID\": \"86200213-0\"\n\t\t\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t},\n\t\t\"PayloadAttributes\": {\n\t\t\t\"EchoTokenText\": \"3ffd3a5c-fffa-48f5-9685-e4a040fa859c\",\n\t\t\t\"VersionNumber\": 18.2\n\t\t},\n\t\t\"PointOfSale\": {\n\t\t\t\"Device\": {\n\t\t\t\t\"DeviceCode\": \"94.200.55.74\"\n\t\t\t},\n\t\t\t\"Country\": {\n\t\t\t\t\"CountryName\": \"United Arab Emirates\"\n\t\t\t}\n\t\t},\n\t\t\"Request\": {\n\t\t\t\"BookingRef\": [\n\t\t\t\t{\n\t\t\t\t\t\"BookingEntity\": {},\n\t\t\t\t\t\"BookingID\": \"WED3F3\",\n\t\t\t\t\t\"BookingRefTypeCode\": \"BA\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"DataLists\": {\n\t\t\t\t\"ContactInfoList\": {\n\t\t\t\t\t\"ContactInfo\": [\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"ContactInfoID\": \"CNCT-1\",\n\t\t\t\t\t\t\t\"ContactTypeText\": \"Primary\",\n\t\t\t\t\t\t\t\"EmailAddress\": [\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\"EmailAddressText\": \"UMAIMATH@TPCONNECTS.COM\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t],\n\t\t\t\t\t\t\t\"Phone\": [\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\"PhoneNumber\": 345345345\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t]\n\t\t\t\t\t\t}\n\t\t\t\t\t]\n\t\t\t\t},\n\t\t\t\t\"PaxList\": {\n\t\t\t\t\t\"Pax\": [\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"Birthdate\": \"1990-07-04\",\n\t\t\t\t\t\t\t\"CitizenshipCountryCode\": \"\",\n\t\t\t\t\t\t\t\"ContactInfoRefID\": \"CNCT-1\",\n\t\t\t\t\t\t\t\"Individual\": {\n\t\t\t\t\t\t\t\t\"GenderCode\": \"M\",\n\t\t\t\t\t\t\t\t\"GivenName\": [\n\t\t\t\t\t\t\t\t\t\"abdul\"\n\t\t\t\t\t\t\t\t],\n\t\t\t\t\t\t\t\t\"IndividualID\": \"\",\n\t\t\t\t\t\t\t\t\"MiddleName\": [\n\t\t\t\t\t\t\t\t\t\"kader\"\n\t\t\t\t\t\t\t\t],\n\t\t\t\t\t\t\t\t\"Surname\": \"tsn\",\n\t\t\t\t\t\t\t\t\"TitleName\": \"Mr\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"PaxID\": \"PAX1\",\n\t\t\t\t\t\t\t\"PTC\": \"ADT\",\n\t\t\t\t\t\t\t\"Remark\": [\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\"RemarkText\": \"GST-CNCT1\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t]\n\t\t\t\t\t\t}\n\t\t\t\t\t]\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"Order\": {\n\t\t\t\t\"OrderID\": \"WED3F3\",\n\t\t\t\t\"OwnerCode\": \"BA\",\n\t\t\t\t\"OwnerTypeCode\": \"ORA\"\n\t\t\t},\n\t\t\t\"OrderChangeParameters\": {\n\t\t\t\t\"ReasonCode\": \"Issue\"\n\t\t\t},\n\t\t\t\"PaymentInfo\": [\n\t\t\t\t{\n\t\t\t\t\t\"Amount\": {\n\t\t\t\t\t\t\"value\": 228.10,\n\t\t\t\t\t\t\"CurCode\": \"GBP\"\n\t\t\t\t\t},\n\t\t\t\t\t\"Desc\": {\n\t\t\t\t\t\t\"DescText\": \"FOP text\"\n\t\t\t\t\t},\n\t\t\t\t\t\"PaymentInfoID\": \"PAYMENT\",\n\t\t\t\t\t\"PaymentMethod\": {\n\t\t\t\t\t\t\"OtherPaymentMethod\": {\n\t\t\t\t\t\t\t\"Remark\": [\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\"RemarkText\": \"Deposit\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t]\n\t\t\t\t\t\t}\n\t\t\t\t\t},\n\t\t\t\t\t\"TypeCode\": \"INV\"\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t}\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://{{URL}}/{{Service}}/orderChange",
+											"protocol": "http",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"{{Service}}",
+												"orderChange"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "OrderReshop",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "api-key",
+												"value": "{{api-key}}"
+											},
+											{
+												"key": "secret-key",
+												"value": "{{secret-key}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n   \"IATA_OrderReshopRQ\":{\n      \"MessageDoc\":{\n         \"Name\":\"NDC\",\n         \"RefVersionNumber\":\"18.2\"\n      },\n      \"AugmentationPoint\":{\"any\":\"tx-09-01-1-4e79fb8b-37af-41ab-99a5-58d62f51cf1a-OF-21808e61-4902-4d01-8164-e549e92974da\"},\n        \"Party\": {\n            \"Participant\": {\n\t\t\t\t\"TravelAgency\": {\n\t\t\t\t\t\"AgencyID\": \"Flight Centre\",\n\t\t\t\t\t\"IATANumber\": \"91212391\",\n\t\t\t\t\t\"Name\": \"ATI US\",\n\t\t\t\t\t\"PseudoCityID\": \"PCC\",\n\t\t\t\t\t\"TravelAgent\": {\n\t\t\t\t\t\t\"TravelAgentID\": \"128-21-0\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n        },\n\t\t \"PayloadAttributes\": {\n            \"EchoTokenText\": \"fcb16315-1298-319e-bf8e-483695ae6bef\",\n            \"VersionNumber\": 18.2\n        },\n      \"Request\":{\n         \"BookingRef\":[\n            {\n               \"BookingEntity\":null,\n               \"BookingID\":\"BA16281D21214\",\n               \"BookingRefTypeCode\":\"TPC\"\n            }\n         ],\n         \"OrderActionContextText\":\"Reprice-single\",\n         \"OrderRefID\":\"UUPPMD\",\n         \"ReshopParameters\":{\n            \"CurParameter\":[\n               {\n                  \"AppCode\":\"Display\",\n                  \"Name\":\"THB\",\n                  \"RequestedCurCode\":\"THB\"\n               }\n            ],\n            \"PricingParameter\":{\n               \"AutoExchInd\":\"true\"\n            }\n         },\n         \"UpdateOrder\":{ \n            \"RepriceOrder\":{\n               \"OrderItemRefID\":[\n                  \"tx-09-01-1-4e79fb8b-37af-41ab-99a5-58d62f51cf1a-OF-21808e61-4902-4d01-8164-e549e92974da-OI-1\"\n               ]\n            },\n            \"ReshopOrder\":{\n               \"ServiceOrder\":{\n                  \"AddOfferItems\":{\n                     \"Paxs\":{\n                        \"Pax\":[\n                           {\n                              \"PaxID\":\"T2\",\n                              \"PTC\":\"ADT\"\n                           }\n                        ]\n                     }\n                  },\n\t\t\t\t\t\t\"DeleteOrderItem\": [\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"OrderItemRefID\": \"ORDERITEM1\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t]\n               }\n            }\n         }\n      }\n   }\n}"
+										},
+										"url": {
+											"raw": "http://{{URL}}/{{Service}}/orderReprice",
+											"protocol": "http",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"{{Service}}",
+												"orderReprice"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "OrderCancel",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "api-key",
+												"value": "{{api-key}}"
+											},
+											{
+												"key": "secret-key",
+												"value": "{{secret-key}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"IATA_OrderCancelRQ\": {\n\t\t\"MessageDoc\": {\n\t\t\t\"Name\": \"NDC\",\n\t\t\t\"RefVersionNumber\": 18.2\n\t\t},\n\t\t\"Party\": {\n\t\t\t\"Sender\": {\n\t\t\t\t\"TravelAgency\": {\n\t\t\t\t\t\"AgencyID\": \"0\",\n\t\t\t\t\t\"IATANumber\": \"62200152\",\n\t\t\t\t\t\"Name\": \"Oman Air\",\n\t\t\t\t\t\"PseudoCityID\": \"SAR\",\n\t\t\t\t\t\"TravelAgent\": {\n\t\t\t\t\t\t\"TravelAgentID\": \"MCTND-21-0\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t},\n\t\t\"PayloadAttributes\": {\n\t\t\t\"EchoTokenText\": \"eb7eba09-ca80-43b7-af37-3fa47369ce22\",\n\t\t\t\"VersionNumber\": 18.2\n\t\t},\n\t\t\"PointOfSale\": {\n\t\t\t\"Device\": {\n\t\t\t\t\"IPAddressText\": \"192.168.10.1\"\n\t\t\t}\n\t\t},\n\t\t\"Request\": {\n\t\t\t\"BookingRef\": [\n\t\t\t\t{\n\t\t\t\t\t\"BookingEntity\": {\n\t\t\t\t\t\t\"Carrier\": {\n\t\t\t\t\t\t\t\"AirlineDesigCode\": \"WY\",\n\t\t\t\t\t\t\t\"Name\": \"OmanAir\"\n\t\t\t\t\t\t}\n\t\t\t\t\t},\n\t\t\t\t\t\"BookingID\": \"WY12449D201220S\",\n\t\t\t\t\t\"BookingRefTypeCode\": \"TPC\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"Order\": [\n\t\t\t\t{\n\t\t\t\t\t\"OrderID\": \"CFNIXV\",\n\t\t\t\t\t\"OwnerCode\": \"LH\",\n\t\t\t\t\t\"OwnerTypeCode\": \"ORA\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"OrderCancelProcessing\": {\n\t\t\t\t\"ReasonCode\": \"Void\"\n\t\t\t}\n\t\t}\n\t}\n}"
+										},
+										"url": {
+											"raw": "http://{{URL}}/{{Service}}/orderCancel",
+											"protocol": "http",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"{{Service}}",
+												"orderCancel"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "OrderRetrieve",
+									"protocolProfileBehavior": {
+										"disabledSystemHeaders": {
+											"content-type": true
+										}
+									},
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "api-key",
+												"value": "{{api-key}}",
+												"type": "text"
+											},
+											{
+												"key": "secret-key",
+												"value": "{{secret-key}}",
+												"type": "text"
+											},
+											{
+												"key": "soapaction",
+												"value": "http://www.iata.org/ndc/OrderRetrieve/",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"IATA_OrderRetrieveRQ\": {\n\t\t\"MessageDoc\": {\n\t\t\t\"Name\": \"NDC\",\n\t\t\t\"RefVersionNumber\": 18.2\n\t\t},\n\t\t\"Party\": {\n            \"Sender\": {\n                \"TravelAgency\": {\n                    \"AgencyID\": \"23286955\",\n                    \"IATANumber\": \"23286955\",\n                    \"Name\": \"Verteil1\",\n                    \"PseudoCityID\": \"DXB\",\n                    \"TravelAgent\": {\n                        \"TravelAgentID\": \"23286955\"\n                    }\n                        }\n            }\n        },\n\t\t \"PayloadAttributes\": {\n            \"EchoTokenText\": \"73e98e08-29c4-4240-a9ae-f6b11729c990\",\n            \"VersionNumber\": 18.2\n        },\n\t\t\"Request\": {\n\t\t\t\"OrderFilterCriteria\": {\n\t\t\t\t\"BookingRefFilterCriteria\": {\t\t\t\t\t\n\t\t\t\t\t\"BookingID\": \"WY12102D2177S\",\n\t\t\t\t\t\"TypeCode\": \"OK\"\n\t\t\t\t},\n\t\t\t\t\"Order\": {\n\t\t\t\t\t\"OrderID\": \"QCKQKF\",\n\t\t\t\t\t\"OwnerCode\": \"WY\",\n\t\t\t\t\t\"OwnerTypeCode\": \"ORA\"\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}"
+										},
+										"url": {
+											"raw": "http://{{URL}}/{{Service}}/orderRetrieve",
+											"protocol": "http",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"{{Service}}",
+												"orderRetrieve"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "OrderCreate",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "api-key",
+												"value": "bd3c877a6286dd02a164e10662499b85",
+												"type": "text"
+											},
+											{
+												"key": "secret-key",
+												"value": "414608ad-3559-46e9-8c88-73c9028bb46b",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"IATA_OrderCreateRQ\": {\n\t\t\"MessageDoc\": {\n\t\t\t\"Name\": \"NDC\",\n\t\t\t\"RefVersionNumber\": 18.2\n\t\t},\n\t\t\"Party\": {\n\t\t\t\"Participant\": [\n\t\t\t\t{\n\t\t\t\t\t\"TravelAgency\": [\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"AgencyID\": 13343,\n\t\t\t\t\t\t\t\"IATANumber\": \"\",\n\t\t\t\t\t\t\t\"Name\": \"Test BA\",\n\t\t\t\t\t\t\t\"PseudoCityID\": \"\",\n\t\t\t\t\t\t\t\"TravelAgent\": {\n\t\t\t\t\t\t\t\t\"TravelAgentID\": \"86200213-0\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t]\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"Sender\": {\n\t\t\t\t\"TravelAgency\": {\n\t\t\t\t\t\"AgencyID\": 13343,\n\t\t\t\t\t\"IATANumber\": \"\",\n\t\t\t\t\t\"Name\": \"Test BA\",\n\t\t\t\t\t\"PseudoCityID\": \"\",\n\t\t\t\t\t\"TravelAgent\": {\n\t\t\t\t\t\t\"TravelAgentID\": \"86200213-0\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t},\n\t\t\"PayloadAttributes\": {\n\t\t\t\"EchoTokenText\": \"3ffd3a5c-fffa-48f5-9685-e4a040fa859c\",\n\t\t\t\"VersionNumber\": 18.2\n\t\t},\n\t\t\"PointOfSale\": {\n\t\t\t\"Device\": {\n\t\t\t\t\"DeviceCode\": \"::ffff:172.31.12.203\",\n\t\t\t\t\"BrowserUserAgentHeaderText\": \"http://web.tpconnects.online\",\n\t\t\t\t\"IPAddressText\": \"::ffff:172.31.12.203\"\n\t\t\t},\n\t\t\t\"RequestTime\": \"2021-07-18T11:44:37\",\n\t\t\t\"Country\": {\n\t\t\t\t\"CountryName\": \"United Arab Emirates\"\n\t\t\t}\n\t\t},\n\t\t\"Request\": {\n\t\t\t\"CreateOrder\": {\n\t\t\t\t\"SelectedOffer\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"OfferRefID\": \"OF-31e24962-3eb1-4c7c-a75e-79c0a70a6ddd\",\n\t\t\t\t\t\t\"OwnerCode\": \"BA\",\n\t\t\t\t\t\t\"SelectedOfferItem\": [\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"OfferItemRefID\": \"OF-31e24962-3eb1-4c7c-a75e-79c0a70a6ddd-OI-1\",\n\t\t\t\t\t\t\t\t\"PaxRefID\": [\n\t\t\t\t\t\t\t\t\t\"PAX1\"\n\t\t\t\t\t\t\t\t]\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t],\n\t\t\t\t\t\t\"ShoppingResponseRefID\": \"ac2.tx-pl-56ece930-1833-446e-9569-52031ec6f8ed\",\n\t\t\t\t\t\t\"TotalOfferPriceAmount\": {\n\t\t\t\t\t\t\t\"value\": 228.10,\n\t\t\t\t\t\t\t\"CurCode\": \"GBP\"\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t},\n\t\t\t\"DataLists\": {\n\t\t\t\t\"ContactInfoList\": {\n\t\t\t\t\t\"ContactInfo\": [\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"ContactInfoID\": \"CNCT-1\",\n\t\t\t\t\t\t\t\"ContactTypeText\": \"Primary\",\n\t\t\t\t\t\t\t\"EmailAddress\": [\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\"EmailAddressText\": \"abdul@tpconnects.com\",\n\t\t\t\t\t\t\t\t\t\"LabelText\": \"Personal\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t],\n\t\t\t\t\t\t\t\"Phone\": [\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\"AreaCodeNumber\": \"61\",\n\t\t\t\t\t\t\t\t\t\"CountryDialingCode\": \"61\",\n\t\t\t\t\t\t\t\t\t\"LabelText\": \"Mobile\",\n\t\t\t\t\t\t\t\t\t\"PhoneNumber\": 4564656\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t]\n\t\t\t\t\t\t}\n\t\t\t\t\t]\n\t\t\t\t},\n\t\t\t\t\"PaxList\": {\n\t\t\t\t\t\"Pax\": [\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"Birthdate\": \"1990-07-04\",\n\t\t\t\t\t\t\t\"CitizenshipCountryCode\": \"\",\n\t\t\t\t\t\t\t\"ContactInfoRefID\": \"CNCT-1\",\n\t\t\t\t\t\t\t\"Individual\": {\n\t\t\t\t\t\t\t\t\"GenderCode\": \"M\",\n\t\t\t\t\t\t\t\t\"GivenName\": [\n\t\t\t\t\t\t\t\t\t\"abdul\"\n\t\t\t\t\t\t\t\t],\n\t\t\t\t\t\t\t\t\"IndividualID\": \"\",\n\t\t\t\t\t\t\t\t\"MiddleName\": [\n\t\t\t\t\t\t\t\t\t\"kader\"\n\t\t\t\t\t\t\t\t],\n\t\t\t\t\t\t\t\t\"Surname\": \"tsn\",\n\t\t\t\t\t\t\t\t\"TitleName\": \"Mr\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"PaxID\": \"PAX1\",\n\t\t\t\t\t\t\t\"PTC\": \"ADT\",\n\t\t\t\t\t\t\t\"Remark\": [\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\"RemarkText\": \"GST-CNCT1\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t]\n\t\t\t\t\t\t}\n\t\t\t\t\t]\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"OrderCreateParameters\": {\n\t\t\t\t\"Remark\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"RemarkText\": \"\"\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t},\n\t\t\t\"PaymentInfo\": [\n\t\t\t\t{\n\t\t\t\t\t\"Amount\": {\n\t\t\t\t\t\t\"value\": 228.10,\n\t\t\t\t\t\t\t\"CurCode\": \"GBP\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t}\n}"
+										},
+										"url": {
+											"raw": "http://{{URL}}/{{Service}}/orderCreate",
+											"protocol": "http",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"{{Service}}",
+												"orderCreate"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "api-key",
+			"value": "1d4987b44cfb49b2b9e85cc6fd1b2541"
+		},
+		{
+			"key": "secret-key",
+			"value": "d054d5d3-24dc-4629-9cd4-9808ecb56d7c"
+		},
+		{
+			"key": "URL",
+			"value": "api.tpconnects.online"
+		},
+		{
+			"key": "Port",
+			"value": "784"
+		},
+		{
+			"key": "Service",
+			"value": "rest"
+		},
+		{
+			"key": "soap",
+			"value": "soap"
+		}
+	]
+}
